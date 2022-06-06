@@ -1,5 +1,5 @@
 # halfhumanresources.github.io
 
-#Team Members:
+# Team Members:
 
 Ryan Farruggia (rjfarruggia@csus.edu)
