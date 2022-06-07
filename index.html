@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+</head>
+
+<body>
+    <div class="app-container">
+        <div class="app-header">
+            <div class="app-header-left">
+                <span class="app-icon"></span>
+                <p class="app-name">Home</p>
+                <div class="search-wrapper">
+                    <input class="search-input" type="text" placeholder="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+            <div class="app-header-right">
+                <button class="mode-switch" title="Switch Theme">
+                    <i class="fa-regular fa-moon"></i>
+                </button>
+            </div>
+        </div>
+        <div class="app-content">
+            <div class="app-sidebar">
+                <a href="#" class="app-sidebar-link active">
+                    <i class="fa-solid fa-house"></i>
+                </a>
+                <a href="#" class="app-sidebar-link">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </a>
+                <a href="#" class="app-sidebar-link">
+                    <i class="fa-solid fa-calendar-plus"></i>
+                </a>
+                <a href="#" class="app-sidebar-link">
+                    <i class="fa-solid fa-gear"></i>
+                </a>
+            </div>
+            <div class="projects-section">
+                <div class="projects-section-header">
+                    <p>Employee Dashboard</p>
+                    <p class="time">May 6, 2022</p>
+                </div>
+                <div class="projects-section-line">
+                    <div class="projects-status">
+                        <div class="item-status">
+                            <span class="status-number">12</span>
+                            <span class="status-type">Employees</span>
+                        </div>
+                        <div class="item-status">
+                            <span class="status-number">2</span>
+                            <span>On Vacation</span>
+                        </div>
+                    </div>
+                    <!-- grid view/list view buttons [disabled for now]
+                    <div class="view-actions">
+                        <button disabled class="view-btn list-view" title="Not Available">
+                            <i class="fa-solid fa-list"></i>
+                        </button>
+                        <button class="view-btn grid-view active" title="Grid View">
+                            <i class="fa-solid fa-border-all"></i>
+                        </button>
+                    </div>-->
+                </div>
+                <div class="project-boxes jsGridView">
+                    <a class="project-box-wrapper">
+                        <div class="project-box box" style="background-color: #fee4cb;">
+                            <div class="project-box-content-header" style="padding: 25px;">
+                                <i class="fa-solid fa-heart-pulse" style="padding-bottom: 10px; font-size: 45px; color: rgb(255, 38, 0);"></i>
+                                <p class="box-content-header">Employee Health</p>
+                                <p class="box-content-subheader">Vitals, Exercise, etc.</p>
+                            </div>
+                            <div class="project-box-footer">
+                                <div class="participants">
+                                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="participant">
+                                    <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="participant">
+                                    <button class="add-participant" style="color: #ff942e;">
+                                        <i class="fa-solid fa-plus" style="font-size: 13px;"></i>
+                                    </button>
+                                </div>
+                                <div class="days-left" style="color: #ff942e;">
+                                    Updated: 2 Days Ago
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="project-box-wrapper">
+                        <div class="project-box box" style="background-color: #ace7ff;">
+                            <div class="project-box-content-header" style="padding: 25px;">
+                                <i class="fa-solid fa-chart-simple" style="padding-bottom: 10px; font-size: 45px; color: dodgerblue"></i>
+                                <p class="box-content-header">View Data</p>
+                                <p class="box-content-subheader">Basic & Advanced Data</p>
+                            </div>
+                            <div class="project-box-footer">
+                                <div class="participants">
+                                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="participant">
+                                    <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="participant">
+                                    <button class="add-participant" style="color: #6eb5ff;">
+                                        <i class="fa-solid fa-plus" style="font-size: 13px;"></i>
+                                    </button>
+                                </div>
+                                <div class="days-left" style="color: #6eb5ff;">
+                                    Updated: 2 Days Ago
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="project-box-wrapper">
+                        <div class="project-box box" style="background-color: #c9f7c3;">
+                            <div class="project-box-content-header" style="padding: 25px;">
+                                <i class="fa-solid fa-chart-pie" style="padding-bottom: 10px; font-size: 45px; color: #35d192;"></i>
+                                <p class="box-content-header">Analytics & Statistics</p>
+                                <p class="box-content-subheader">Averages, St. Dev., etc.</p>
+                            </div>
+                            <div class="project-box-footer">
+                                <div class="participants">
+                                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="participant">
+                                    <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="participant">
+                                    <button class="add-participant" style="color: #3fe2a1;">
+                                        <i class="fa-solid fa-plus" style="font-size: 13px;"></i>
+                                    </button>
+                                </div>
+                                <div class="days-left" style="color: #3fe2a1;">
+                                    Updated: 2 Days Ago
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="project-box-wrapper">
+                        <div class="project-box box" style="background-color: #ecd4ff;">
+                            <div class="project-box-content-header" style="padding: 25px;">
+                                <i class="fa-solid fa-umbrella-beach" style="padding-bottom: 10px; font-size: 45px; color: #9f7dea;"></i>
+                                <p class="box-content-header">Vacation Time</p>
+                                <p class="box-content-subheader">View accrued vacation time</p>
+                            </div>
+                            <div class="project-box-footer">
+                                <div class="participants">
+                                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="participant">
+                                    <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="participant">
+                                    <button class="add-participant" style="color: #b28dff;">
+                                        <i class="fa-solid fa-plus" style="font-size: 13px;"></i>
+                                    </button>
+                                </div>
+                                <div class="days-left" style="color: #b28dff;">
+                                    Updated: 2 Days Ago
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="project-box-wrapper">
+                        <div class="project-box box" style="background-color: #fab9b6;">
+                            <div class="project-box-content-header" style="padding: 25px;">
+                                <i class="fa-solid fa-burger" style="padding-bottom: 10px; font-size: 45px; color: rgb(255, 38, 0);"></i>
+                                <p class="box-content-header">Lunch & Breaks</p>
+                                <p class="box-content-subheader">View break time statistics</p>
+                            </div>
+                            <div class="project-box-footer">
+                                <div class="participants">
+                                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="participant">
+                                    <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="participant">
+                                    <button class="add-participant" style="color: rgb(255, 45, 45);">
+                                        <i class="fa-solid fa-plus" style="font-size: 13px;"></i>
+                                    </button>
+                                </div>
+                                <div class="days-left" style="color: rgb(255, 39, 39);">
+                                    Updated: 2 Days Ago
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="project-box-wrapper">
+                        <div class="project-box box" style="background-color: rgb(244, 174, 255)">
+                            <div class="project-box-content-header" style="padding: 25px;">
+                                <i class="fa-solid fa-circle-question" style="padding-bottom: 10px; font-size: 45px; color: rgb(217, 98, 236);"></i>
+                                <p class="box-content-header">Other Metrics</p>
+                                <p class="box-content-subheader">TBD</p>
+                            </div>
+                            <div class="project-box-footer">
+                                <div class="participants">
+                                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="participant">
+                                    <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="participant">
+                                    <button class="add-participant" style="color: #d546fc;">
+                                        <i class="fa-solid fa-plus" style="font-size: 13px;"></i>
+                                    </button>
+                                </div>
+                                <div class="days-left" style="color: #d546fc;">
+                                    Updated: 2 Days Ago
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
