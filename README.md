@@ -2,7 +2,7 @@
 
 Ryan Farruggia (rjfarruggia@csus.edu)
 
-Member
+Tim Huang (timhuang@csus.edu)
 
 Member
 
