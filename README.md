@@ -6,7 +6,7 @@ Tim Huang (timhuang@csus.edu)
 
 Joshua Degmetich (jdegmetich@csus.edu)
 
-Member
+Kenneth Munk (kmunk@csus.edu / contact.me@kenmunk.com)
 
 Member
 
