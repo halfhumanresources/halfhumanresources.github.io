@@ -4,7 +4,7 @@ Ryan Farruggia (rjfarruggia@csus.edu)
 
 Tim Huang (timhuang@csus.edu)
 
-Member
+Joshua Degmetich (jdegmetich@csus.edu)
 
 Member
 
