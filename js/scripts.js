@@ -18,6 +18,16 @@ sidebarclick.forEach((btn) => {
         e.target.classList.toggle("active");
     });
 });
+const moonicon = document.querySelector(".moon-icon");
+moonicon.addEventListener('click', function() {
+    if (moonicon.classList.contains('fa-moon')) {
+        moonicon.classList.remove('fa-moon');
+        moonicon.classList.add('fa-lightbulb');
+    } else {
+        moonicon.classList.add('fa-moon')
+        moonicon.classList.remove('fa-lightbulb');
+    }
+});
     /* disable grid/list view for now, -R
         var listView = document.querySelector('.list-view');
         var gridView = document.querySelector('.grid-view');
