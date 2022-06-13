@@ -4,24 +4,6 @@
 }
 
 :root {
-    --app-container: #f3f6fd;
-    --main-color: #1f1c2e;
-    --secondary-color: #4A4A4A;
-    --link-color: #1f1c2e;
-    --link-color-hover: #c3cff4;
-    --link-color-active: #fff;
-    --link-color-active-bg: #1f1c2e;
-    --projects-section: #fff;
-    --more-list-bg: #fff;
-    --more-list-bg-hover: #f6fbff;
-    --more-list-shadow: rgba(209, 209, 209, 0.4);
-    --button-bg: #1f1c24;
-    --search-area-bg: #fff;
-    --star: #1ff1c2;
-    --vendia: #223B61;
-}
-
-.dark:root {
     --app-container: #1f1d2b;
     --app-container: #111827;
     --main-color: #fff;
@@ -38,6 +20,24 @@
     --more-list-bg-hover: rgba(195, 207, 244, 0.1);
     --more-list-shadow: rgba(195, 207, 244, 0.1);
     --vendia: #fff;
+}
+
+.dark:root {
+    --app-container: #f3f6fd;
+    --main-color: #1f1c2e;
+    --secondary-color: #4A4A4A;
+    --link-color: #1f1c2e;
+    --link-color-hover: #c3cff4;
+    --link-color-active: #fff;
+    --link-color-active-bg: #1f1c2e;
+    --projects-section: #fff;
+    --more-list-bg: #fff;
+    --more-list-bg-hover: #f6fbff;
+    --more-list-shadow: rgba(209, 209, 209, 0.4);
+    --button-bg: #1f1c24;
+    --search-area-bg: #fff;
+    --star: #1ff1c2;
+    --vendia: #223B61;
 }
 
 * {
@@ -62,6 +62,32 @@ body {
 button,
 a {
     cursor: pointer;
+}
+#eh-table-container {
+    display: flex;
+    flex-direction: column;
+    color: var(--main-color);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    canvas {
+        input {
+            label {
+                color: #fff;
+                font-size: 1.4rem;
+            }
+        }
+    }
+}
+#eh-table-title {
+    display: flex;
+    color: var(--main-color);
+    font-size: 1.7rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
 }
 
 .red {
@@ -169,8 +195,8 @@ a {
 }
 
 .search-wrapper {
-    margin-left: 20px;
     border-radius: 20px;
+    border: 1px solid rgb(201, 201, 201);
     background-color: var(--search-area-bg);
     padding-right: 18px;
     height: 40px;
@@ -180,10 +206,21 @@ a {
     width: 100%;
     max-width: 480px;
     color: var(--light-font);
-    box-shadow: 0 2px 4px 0 rgba(136, 148, 171, .2), 0 24px 20px -24px rgba(71, 82, 107, .1);
     overflow: hidden;
     .dark & {
         box-shadow: none;
+        border: 1px solid #333;
+        i {
+            color: #333;
+        }
+        &:focus-within {
+            border: 3px solid #333;
+            transition: 50ms;
+        }
+    }
+    &:focus-within {
+        border: 3px solid #fff;
+        transition: 50ms;
     }
 }
 
