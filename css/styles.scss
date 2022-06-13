@@ -51,7 +51,9 @@ body {
     height: 100vh;
     margin: 0;
 }
-
+.middle {
+    color: limegreen;
+}
 body {
     font-family: 'DM Sans', sans-serif;
     overflow: hidden;
@@ -69,17 +71,21 @@ a {
     flex-direction: column;
     color: var(--main-color);
     text-align: center;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    canvas {
+    justify-content: space-evenly;
+    form {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        label {
+            color: var(--main-color);
+            font-size: 1.4rem;
+        }
         input {
-            label {
-                color: #fff;
-                font-size: 1.4rem;
-            }
+            color: var(--main-color);
+            font-size: 1.4rem;
         }
     }
+
 }
 #eh-table-title {
     display: flex;
@@ -88,7 +94,6 @@ a {
     text-align: center;
     align-items: center;
     justify-content: center;
-    color: #fff;
 }
 
 .red {

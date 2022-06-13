@@ -57,17 +57,25 @@
                 </div>
                 <!-- cool chart stuff goes here -->
                 <div id="eh-table-container">
-                    <p id="eh-table-title">Average Employee Health&nbsp;<b>(2022)</b></p>
+                    <p id="eh-table-title">Average Employee Pulse Rate&nbsp;<b>(by Department)</b></p>
                     <canvas id="average-employee-health"></canvas>
                     <form style="padding: 20px 0 20px 0;">
-                        <input type="radio" id="pulse" name="selection">
-                        <label for="pulse">Pulse Rate</label>
-                        <input type="radio" id="bp" name="selection">
-                        <label for="bp">Blood Pressure</label>
-                        <input type="radio" id="exercise" name="selection">
-                        <label for="exercise">Exercise</label>
-                        <input type="radio" id="bt" name="selection">
-                        <label for="bt">Body Temperature</label>
+                        <div>
+                            <input type="radio" id="pulse" name="selection">
+                            <label for="pulse">Pulse Rate</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="bp" name="selection">
+                            <label for="bp">Blood Pressure</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="exercise" name="selection">
+                            <label for="exercise">Exercise</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="bt" name="selection">
+                            <label for="bt">Body Temperature</label>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -84,19 +92,19 @@
             labels: ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "August", "September", "October", "November", "December"],
             datasets: [
                 {
-                label: 'Pulse Rate',
+                label: 'Engineering',
                 data: [11, 17, 6, 10, 9, 20, 34, 15, 19, 43, 10, 7],
                 backgroundColor: '#d7ecfb',
                 borderColor: '#36a2eb'
                 },
                 {
-                label: 'Label Name 2',
+                label: 'Marketing',
                 data: [14, 20, 15, 36, 28, 22, 27, 10, 15, 34, 18, 8],
                 backgroundColor: '#ffe0e6',
                 borderColor: '#ff6384'
                 },
                 {
-                label: 'Label Name 3',
+                label: 'Human Resources',
                 data: [4, 7, 8, 9, 10, 16, 20, 24, 25, 40, 36, 37],
                 backgroundColor: 'lightgreen',
                 borderColor: 'limegreen'
