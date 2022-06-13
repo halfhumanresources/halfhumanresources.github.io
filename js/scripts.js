@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.documentElement.classList.toggle('dark');
         modeSwitch.classList.toggle('active');
     });*/
-
+    /* $('.app-container').fadeIn(300);*/
     var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     var today  = new Date();
     var insertdate = document.getElementById("current-date");
