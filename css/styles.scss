@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap');
 * {
     box-sizing: border-box;
-    font-family: 'DM Sans', Arial, Helvetica, sans-serif;
 }
 
 :root {
@@ -378,7 +377,7 @@ a {
     display: flex;
     flex-direction: column;
     p {
-        font-size: 15px;
+        font-size: 16px;
         color: var(--message);
     }
 }
