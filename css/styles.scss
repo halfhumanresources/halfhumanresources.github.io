@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
 * {
     box-sizing: border-box;
+    font-family: 'DM Sans', Arial, Helvetica, sans-serif;
 }
 
 :root {
@@ -51,9 +52,7 @@ body {
     height: 100vh;
     margin: 0;
 }
-.middle {
-    color: limegreen;
-}
+
 body {
     font-family: 'DM Sans', sans-serif;
     overflow: hidden;
@@ -370,6 +369,7 @@ a {
         color: var(--main-color);
         margin-top: 0;
         margin-bottom: 2px;
+        font-weight: 700;
     }
     .description {
         font-size: 15px;
@@ -756,4 +756,58 @@ i {
             animation-duration: 0.5s;
         }
     }
+}
+
+#all-data {
+    font-family: 'DM Sans', Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 15px;
+    background-color: transparent;
+    cursor: default;
+}
+
+#all-data td, #all-data th {
+  padding: 10px;
+  text-align: center;
+  font-weight: 400;
+}
+
+#all-data tr:first-child {
+    background-color: transparent !important;
+}
+#all-data tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+#all-data tr:nth-child(odd) {
+    background-color: #dfdede;
+}
+
+#all-data tr:hover {
+    background-color: rgb(207, 241, 255);
+}
+
+#all-data th {
+    background-color: rgb(0, 167, 222);
+    color: white;
+}
+
+/* top-left border-radius */
+#all-data tr:first-child th:first-child {
+    border-top-left-radius: 15px;
+}
+
+/* top-right border-radius */
+#all-data tr:first-child th:last-child {
+    border-top-right-radius: 15px;
+}
+
+/* bottom-left border-radius */
+#all-data tr:last-child td:first-child {
+    border-bottom-left-radius: 15px;
+}
+
+/* bottom-right border-radius */
+#all-data tr:last-child td:last-child {
+    border-bottom-right-radius: 15px;
 }

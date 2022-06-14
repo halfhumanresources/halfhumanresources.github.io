@@ -55,11 +55,61 @@
                     </div>
                     <p id="current-date" class="time">May 6, 2022</p>
                 </div>
+                <div>
+                    <p id="eh-table-title">Average Accrued Vacation Time&nbsp;<b>(Days)</b></p>
+                    <canvas id="average-employee-vacation"></canvas>
+                </div>
             </div>
         </div>
     </div>
     <script src="js/scripts.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const vacation_chart = document.getElementById('average-employee-vacation').getContext('2d');
+        const vacationChart = new Chart(vacation_chart, {
+        type: 'bar',
+        data: {
+            labels: ["Engineering", "Marketing", "Human Resources", "Finance", "Other"],
+            datasets: [
+                {
+                label: 'Toggle Data',
+                data: [20, 10, 15, 30, 5],
+                backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(255, 205, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(54, 162, 235, 0.2)'
+                ],
+                borderColor: [
+                'rgb(255, 99, 132)',
+                'rgb(255, 159, 64)',
+                'rgb(255, 205, 86)',
+                'rgb(75, 192, 192)',
+                'rgb(54, 162, 235)'
+                ],
+                borderWidth: 2,
+                },
+
+            ]
+        },
+        options: {
+            scales: {
+                x: {
+                    ticks: {
+                        color: '#fff',
+                    }
+                },
+                y: {
+                    ticks: {
+                        color: '#fff',
+                    }
+                }
+            }
+        }
+        });
+    </script>
 </body>
 
 </html>

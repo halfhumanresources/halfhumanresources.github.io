@@ -74,7 +74,7 @@
             labels: ["Exercise (%)", "Breaks (%)", "Hours Worked (%)", "Lunch (%)", "Vacations (%)"],
             datasets: [
                 {
-                label: 'Average Employee Work/Life Balance (2022)',
+                label: 'Toggle Data',
                 data: [90, 100, 85, 95, 50],
                 backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
@@ -90,15 +90,21 @@
                 'rgb(75, 192, 192)',
                 'rgb(54, 162, 235)'
                 ],
-                borderWidth: 2
-                }
+                borderWidth: 2,
+                },
+
             ]
         },
         options: {
             scales: {
                 x: {
                     ticks: {
-                        color: '#555',
+                        color: '#fff',
+                    }
+                },
+                y: {
+                    ticks: {
+                        color: '#fff',
                     }
                 }
             }
