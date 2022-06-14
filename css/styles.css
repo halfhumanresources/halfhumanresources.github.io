@@ -995,7 +995,7 @@ i {
 }
 
 #all-data td, #all-data th {
-  padding: 10px;
+  padding: 15px;
   text-align: center;
   font-weight: 400;
 }
@@ -1013,31 +1013,21 @@ i {
 }
 
 #all-data tr:hover {
-  background-color: #cff1ff;
+  background-color: #dff5ff;
 }
 
 #all-data th {
-  background-color: #00a7de;
+  background-color: #444;
   color: white;
 }
 
 /* top-left border-radius */
 #all-data tr:first-child th:first-child {
-  border-top-left-radius: 15px;
+  border-top-left-radius: 10px;
 }
 
 /* top-right border-radius */
 #all-data tr:first-child th:last-child {
-  border-top-right-radius: 15px;
-}
-
-/* bottom-left border-radius */
-#all-data tr:last-child td:first-child {
-  border-bottom-left-radius: 15px;
-}
-
-/* bottom-right border-radius */
-#all-data tr:last-child td:last-child {
-  border-bottom-right-radius: 15px;
+  border-top-right-radius: 10px;
 }
 /*# sourceMappingURL=styles.css.map */
