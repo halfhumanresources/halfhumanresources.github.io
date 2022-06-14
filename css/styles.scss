@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
 * {
     box-sizing: border-box;
+    font-family: 'DM Sans', Arial, Helvetica, sans-serif;
 }
 
 :root {
@@ -69,17 +70,21 @@ a {
     flex-direction: column;
     color: var(--main-color);
     text-align: center;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    canvas {
+    justify-content: space-evenly;
+    form {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        label {
+            color: var(--main-color);
+            font-size: 1.4rem;
+        }
         input {
-            label {
-                color: #fff;
-                font-size: 1.4rem;
-            }
+            color: var(--main-color);
+            font-size: 1.4rem;
         }
     }
+
 }
 #eh-table-title {
     display: flex;
@@ -88,7 +93,6 @@ a {
     text-align: center;
     align-items: center;
     justify-content: center;
-    color: #fff;
 }
 
 .red {
@@ -365,6 +369,7 @@ a {
         color: var(--main-color);
         margin-top: 0;
         margin-bottom: 2px;
+        font-weight: 700;
     }
     .description {
         font-size: 15px;
@@ -751,4 +756,48 @@ i {
             animation-duration: 0.5s;
         }
     }
+}
+
+#all-data {
+    font-family: 'DM Sans', Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 15px;
+    background-color: transparent;
+    cursor: default;
+}
+
+#all-data td, #all-data th {
+  padding: 15px;
+  text-align: center;
+  font-weight: 400;
+}
+
+#all-data tr:first-child {
+    background-color: transparent !important;
+}
+#all-data tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+#all-data tr:nth-child(odd) {
+    background-color: #dfdede;
+}
+
+#all-data tr:hover {
+    background-color: rgb(223, 245, 255);
+}
+
+#all-data th {
+    background-color: #444;
+    color: white;
+}
+
+/* top-left border-radius */
+#all-data tr:first-child th:first-child {
+    border-top-left-radius: 10px;
+}
+
+/* top-right border-radius */
+#all-data tr:first-child th:last-child {
+    border-top-right-radius: 10px;
 }
