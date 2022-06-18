@@ -71,6 +71,27 @@ a {
   cursor: pointer;
 }
 
+.searchcontainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 30px;
+}
+
+.searchcontainer a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 #eh-table-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -607,9 +628,14 @@ a {
   color: var(--link-color-active);
 }
 
+.projects-section {
+  overflow: auto;
+}
+
 .project-boxes {
   margin: 0 -8px;
-  overflow-y: auto;
+  overflow-y: none;
+  padding-bottom: 50px;
 }
 
 .project-boxes.jsGridView {
