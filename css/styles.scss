@@ -65,6 +65,17 @@ button,
 a {
     cursor: pointer;
 }
+.searchcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    a {
+        display: flex;
+    }
+}
+
 #eh-table-container {
     display: flex;
     flex-direction: column;
@@ -434,9 +445,14 @@ a {
     }
 }
 
+.projects-section {
+    overflow: auto;
+}
+
 .project-boxes {
     margin: 0 -8px;
-    overflow-y: auto;
+    overflow-y: none;
+    padding-bottom: 50px;
     &.jsGridView {
         display: flex;
         flex-wrap: wrap;

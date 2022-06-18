@@ -1,0 +1,4 @@
+GET https://r0981ch5ff.execute-api.us-west-2.amazonaws.com/graphql/
+Content-Type: "application/json"
+Accept: "application/json"
+Authorization: "WB5xj36cNgDcSoj7te8kyyTsBVh29Y3pmYnk2WkcSJF"
