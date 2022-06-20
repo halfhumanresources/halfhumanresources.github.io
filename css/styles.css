@@ -77,19 +77,44 @@ a {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   margin-top: 30px;
 }
 
-.searchcontainer a {
+.searchcontainer .result-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.searchcontainer .result-container .result {
+  background-color: #81cdff44;
+}
+
+.searchcontainer .result-container .result .name-container {
+  padding: 25px;
+  color: #fff;
+}
+
+.searchcontainer .result-container .result .name-container i {
+  padding-bottom: 10px;
+  font-size: 45px;
+}
+
+.searchcontainer .result-container .result .name-container p {
+  color: #fff;
 }
 
 #eh-table-container {
@@ -1015,7 +1040,6 @@ i {
   font-family: 'DM Sans', Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
-  border-radius: 15px;
   background-color: transparent;
   cursor: default;
 }
@@ -1024,36 +1048,13 @@ i {
   padding: 15px;
   text-align: center;
   font-weight: 400;
+  color: #fff;
 }
 
-#all-data tr:first-child {
-  background-color: transparent !important;
-}
-
-#all-data tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-#all-data tr:nth-child(odd) {
-  background-color: #dfdede;
-}
-
-#all-data tr:hover {
-  background-color: #dff5ff;
-}
-
-#all-data th {
-  background-color: #444;
+#all-data thead {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
   color: white;
-}
-
-/* top-left border-radius */
-#all-data tr:first-child th:first-child {
-  border-top-left-radius: 10px;
-}
-
-/* top-right border-radius */
-#all-data tr:first-child th:last-child {
-  border-top-right-radius: 10px;
+  background-color: #222;
 }
 /*# sourceMappingURL=styles.css.map */
