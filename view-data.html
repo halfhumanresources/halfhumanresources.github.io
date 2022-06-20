@@ -52,19 +52,19 @@
                 <div class="projects-section-header">
                     <div style="display: flex; flex-direction: column;">
                         <p>View Data</p>
-                        <span>Basic & Advanced Raw Data</span>
+                        <span>Raw Employee Data</span>
                     </div>
                     <p id="current-date" class="time">May 6, 2022</p>
                 </div>
                 <table id="all-data">
                     <thead>
-                        <th>Employee Name</th>
+                        <th>Name</th>
                         <th>Age</th>
-                        <th>Gender Identity</th>
-                        <th>Height (feet'inches)</th>
-                        <th>Weight (lbs)</th>
-                        <th>Body Temp. (&deg;F)</th>
-                        <th>Pulse Rate (BPM)</th>
+                        <th>Gender</th>
+                        <th>Height</th>
+                        <th>Weight</th>
+                        <th>Body Temp.</th>
+                        <th>Pulse Rate</th>
                         <th>Blood Pressure</th>
                         <th>Respiration Rate</th>
                         <th>Avg. Exercise</th>
@@ -72,6 +72,12 @@
                         <th>Avg. Hours Worked</th>
                     </thead>
                 </table>
+                <div class="loader-container">
+                    <div id="loader">
+                        <h1>Fetching Employee Data</h1>
+                        <i class="fa fa-spinner spinner"></i>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

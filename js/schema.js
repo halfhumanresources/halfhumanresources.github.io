@@ -37,6 +37,7 @@ function process(result) {
     data = JSON.stringify(result);
     myObj = JSON.parse(data);
     var proc = myObj.list_employeeItems._employeeItems;
+    document.getElementById("loader").style.display = "none";
     for (let x in proc) {
         $('#all-data').append(`
         <tr class="row">
@@ -55,6 +56,4 @@ function process(result) {
         </tr>
     `);
     }
-    $(".row:nth-child(odd)").css('backgroundColor', '#555');
-    $(".row:nth-child(even)").css('backgroundColor', '#333');
 }

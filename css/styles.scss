@@ -22,6 +22,7 @@
     --more-list-shadow: rgba(195, 207, 244, 0.1);
     --vendia: #fff;
     --message: rgb(224, 64, 64);
+    --row-bg: #333;
 }
 
 .dark:root {
@@ -40,6 +41,7 @@
     --search-area-bg: #fff;
     --star: #1ff1c2;
     --vendia: #223B61;
+    --row-bg: #ececec;
 }
 
 * {
@@ -804,12 +806,56 @@ i {
   padding: 15px;
   text-align: center;
   font-weight: 400;
-  color: #fff;
+  color: var(--main-color);
 }
 
 #all-data thead {
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    color: white;
-    background-color: #222;
+    background-color: transparent;
+    border-bottom: 2px solid var(--main-color);
+    font-weight: bold;
+}
+.row {
+    background: transparent;
+    animation: fadeIn;
+    transition: 0.1s;
+    animation-duration: 0.4s;
+}
+.row:hover {
+    background: var(--row-bg);
+}
+.spinner {
+    animation-name: spin;
+    animation-iteration-count: infinite;
+    animation-duration:0.9s;
+}
+.loader-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 50px;
+    #loader {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h1 {
+            color: var(--main-color);
+        }
+        i {
+            font-size: 40px;
+            color: var(--main-color);
+        }
+    }
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes spin {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
 }
