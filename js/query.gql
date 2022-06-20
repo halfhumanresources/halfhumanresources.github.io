@@ -1,5 +1,0 @@
-curl "https://r0981ch5ff.execute-api.us-west-2.amazonaws.com/graphql/" ^
--H "Content-Type: application/json" ^
--H "Accept: application/json" ^
--H "Authorization: WB5xj36cNgDcSoj7te8kyyTsBVh29Y3pmYnk2WkcSJF" ^
--d '{"query":"query listQuery { list_employeeItems { _employeeItems { _id age avgWeeklyExercise avgWeeklyHours bloodpressure bodytemp gender height nameFirst nameLast pulserate respirationrate vacationBalance weight } } }"}' \

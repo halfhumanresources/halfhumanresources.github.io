@@ -37,11 +37,24 @@ function process(result) {
     data = JSON.stringify(result);
     myObj = JSON.parse(data);
     var proc = myObj.list_employeeItems._employeeItems;
-    var html;
     for (let x in proc) {
-        $('#mySearch').append(`<a href="#" class="project-box-wrapper result"> <div class="project-box box" style="background-color: #81cdff44;"> <div class="project-box-content-header name-container" style="padding: 25px;color: #fff"> <i class="fa-solid fa-user" style="padding-bottom: 10px; font-size: 45px;"></i> <p class="box-content-header" style="color: #fff">${proc[x].nameFirst} ${proc[x].nameLast}</p> </div> </div> </a>`);
+        $('#all-data').append(`
+        <tr class="row">
+            <th>${proc[x].nameFirst} ${proc[x].nameLast}</th>
+            <th>${proc[x].age}</th>
+            <th>${proc[x].gender}</th>
+            <th>${proc[x].height}</th>
+            <th>${proc[x].weight}</th>
+            <th>${proc[x].bodytemp}</th>
+            <th>${proc[x].pulserate}</th>
+            <th>${proc[x].bloodpressure}</th>
+            <th>${proc[x].respirationrate}</th>
+            <th>${proc[x].avgWeeklyExercise}</th>
+            <th>${proc[x].vacationBalance}</th>
+            <th>${proc[x].avgWeeklyHours}</th>
+        </tr>
+    `);
     }
-    document.getElementById("test").innerHTML = text;
+    $(".row:nth-child(odd)").css('backgroundColor', '#555');
+    $(".row:nth-child(even)").css('backgroundColor', '#333');
 }
-
-proc[x]._id
