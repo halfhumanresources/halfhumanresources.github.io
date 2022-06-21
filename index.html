@@ -205,59 +205,12 @@
         </div>
     </div>
     <script>
-        function myFunction() {
-            // var input, filter, ul, li, a, i, txtValue;
-            let input, filter, searchContainer, a, p, i, txtValue;
-            input = document.getElementById("myInput");
-            filter = input.value.toUpperCase();
-            searchContainer = document.getElementById("mySearch");
-            p = searchContainer.getElementsByClassName("box-content-header");
-            for (i = 0; i < p.length; i++) {
-                p = p[i].getElementsByTagName("a")[0];
-                txtValue = p.textContent || p.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    p[i].style.display = "";
-                } else {
-                    p[i].style.display = "none";
-                }
-            }
-        }
+    $(".row:nth-child(odd)").css('backgroundColor', '#555');
+    $(".row:nth-child(even)").css('backgroundColor', '#333');
+    $(".row:nth-child(even)").on("mouseover", () => {
+        $(this).css("background-color", "deepskyblue");
+    });
     </script>
-    <!-- temporary data for testing -->
-    <script src="js/data.js"></script>
-    <!-- fetch api attempts
-    <script>
-        const key = 'service:My-Graph-2-wlr0mp:nZz4NyriyCBNXw0TkFAWFA';
-        const vendiakey = 'Q0Vumb5QRVf-K-KAAm7HPjMR_86JLfRoCLFZ-Xyj';
-        const endpointURL = 'https://te835qsg0h.execute-api.us-west-2.amazonaws.com/graphql/';
-    </script>
-    <script>
-        var request1 = new XMLHttpRequest();
-        request1.open('GET', 'https://swapi.dev/api/people/1');
-        request1.setRequestHeader('Authorization', 'service:My-Graph-2-wlr0mp:nZz4NyriyCBNXw0TkFAWFA');
-        request1.onreadystatechange = function () {
-          if (this.readyState === 4) {
-            console.log('Status:', this.status);
-            console.log('Headers:', this.getAllResponseHeaders());
-            console.log('Body:', this.responseText);
-          }
-        };
-        request1.send();
-    </script>
-    <script>
-        var request2 = new XMLHttpRequest();
-        request2.open('GET', 'https://te835qsg0h.execute-api.us-west-2.amazonaws.com/graphql/');
-        request2.setRequestHeader('Authorization', 'Q0Vumb5QRVf-K-KAAm7HPjMR_86JLfRoCLFZ-Xyj');
-        request2.onreadystatechange = function () {
-          if (this.readyState === 4) {
-            console.log('Status:', this.status);
-            console.log('Headers:', this.getAllResponseHeaders());
-            console.log('Body:', this.responseText);
-          }
-        };
-        request2.send();
-    </script>-->
-    
 </body>
 
 </html>
