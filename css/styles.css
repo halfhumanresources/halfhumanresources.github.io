@@ -23,7 +23,7 @@
   --more-list-shadow: rgba(195, 207, 244, 0.1);
   --vendia: #fff;
   --message: rgb(224, 64, 64);
-  --row-bg: #333;
+  --row-bg: rgba(8, 29, 75, 0.7);
   --form-control-color: rebeccapurple;
   --radio-buttons: #223B61;
 }
@@ -1082,6 +1082,8 @@ i {
           animation-iteration-count: infinite;
   -webkit-animation-duration: 0.9s;
           animation-duration: 0.9s;
+  -webkit-transition: 2s;
+  transition: 2s;
 }
 
 .loader-container {
@@ -1100,6 +1102,8 @@ i {
           align-items: center;
   width: 100%;
   margin-top: 50px;
+  -webkit-transition: 2s;
+  transition: 2s;
 }
 
 .loader-container #loader {
@@ -1316,5 +1320,14 @@ input[type="radio"] {
 .wrapper .option span {
   font-size: 20px;
   color: var(--main-color);
+}
+
+#average-employee-health {
+  -webkit-animation: fadeIn;
+          animation: fadeIn;
+  -webkit-transition: 2s;
+  transition: 2s;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
 }
 /*# sourceMappingURL=styles.css.map */
