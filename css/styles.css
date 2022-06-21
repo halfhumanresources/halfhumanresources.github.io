@@ -25,6 +25,7 @@
   --message: rgb(224, 64, 64);
   --row-bg: #333;
   --form-control-color: rebeccapurple;
+  --radio-buttons: #223B61;
 }
 
 .dark:root {
@@ -44,6 +45,7 @@
   --star: #1ff1c2;
   --vendia: #223B61;
   --row-bg: #ececec;
+  --radio-buttons: #0069d9;
 }
 
 * {
@@ -1233,7 +1235,7 @@ input[type="radio"] {
 
 #option-1:checked:checked ~ .option-1 {
   border-color: #0069d9;
-  background: #223B61;
+  background: var(--radio-buttons);
   width: 120%;
 }
 
@@ -1253,7 +1255,7 @@ input[type="radio"] {
 
 #option-2:checked:checked ~ .option-2 {
   border-color: #0069d9;
-  background: #223B61;
+  background: var(--radio-buttons);
   width: 120%;
 }
 
@@ -1273,7 +1275,7 @@ input[type="radio"] {
 
 #option-3:checked:checked ~ .option-3 {
   border-color: #0069d9;
-  background: #223B61;
+  background: var(--radio-buttons);
   width: 120%;
 }
 
@@ -1293,7 +1295,7 @@ input[type="radio"] {
 
 #option-4:checked:checked ~ .option-4 {
   border-color: #0069d9;
-  background: #223B61;
+  background: var(--radio-buttons);
   width: 120%;
 }
 
