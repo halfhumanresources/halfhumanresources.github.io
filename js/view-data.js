@@ -72,3 +72,14 @@ function createEmployee() {
 function cancelForm() {
     $(".create-delete-wrap").css("display", "flex");
 }
+
+// WORKING MUTATION QUERY TO CREATE AN EMPLOYEE !!!
+/* 
+mutation new_emp {
+  add_employee_async(
+    input: {age: 0, avgWeeklyExercise: 0, avgWeeklyHours: 0, bodytemp: 0, bloodpressure: "", gender: "", height: "", nameFirst: "", nameLast: "", pulserate: 0, respirationrate: 0, vacationBalance: 0, weight: 0}
+  ) {
+    error
+  }
+}
+*/
