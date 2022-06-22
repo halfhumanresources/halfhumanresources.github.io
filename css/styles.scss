@@ -25,6 +25,7 @@
     --row-bg: rgba(8, 29, 75, 0.7);
     --form-control-color: rebeccapurple;
     --radio-buttons: #223B61;
+    --create-delete: #223B61;
 }
 
 .dark:root {
@@ -45,6 +46,7 @@
     --vendia: #223B61;
     --row-bg: #ececec;
     --radio-buttons: #0069d9;
+    --create-delete: #007bff9d;
 }
 
 * {
@@ -798,7 +800,7 @@ i {
     }
 }
 
-#all-data {
+.all-data {
     font-family: 'DM Sans', Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
@@ -806,14 +808,14 @@ i {
     cursor: default;
 }
 
-#all-data td, #all-data th {
+.all-data td, .all-data th {
   padding: 15px;
   text-align: center;
   font-weight: 400;
   color: var(--main-color);
 }
 
-#all-data thead {
+.all-data thead {
     background-color: transparent;
     border-bottom: 2px solid var(--main-color);
     font-weight: bold;
@@ -841,6 +843,7 @@ i {
     width: 100%;
     margin-top: 50px;
     transition: 2s;
+    background: transparent;
     #loader {
         display: flex;
         flex-direction: column;
@@ -1025,4 +1028,66 @@ input[type="radio"] {
     animation: fadeIn;
     transition: 2s;
     animation-duration: 2s;
+}
+.create-delete-wrap, .submit-buttons-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    animation: fadeIn 1.2s ease;
+    transition: 1s;
+    .create-btn, .delete-btn {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        background: var(--app-container);
+        color: var(--main-color);
+        flex: 2;
+        border-radius: 10px;
+        font-weight: bold;
+        outline: none;
+        border: 2px solid var(--main-color);
+        font-size: 17px;
+        i {
+            margin-right: 10px;
+        }
+    }
+    .create-btn {
+        margin-right: 20px;
+    }
+    .create-btn:hover {
+        background: rgb(1, 173, 231);
+        transition: 0.1s;
+        color: #fff;
+    }
+    .delete-btn:hover {
+        background:rgb(224, 64, 64);
+        transition: 0.1s;
+        color: #fff;
+    }
+}
+
+input[type="button"] {
+    border: none;
+    outline: none;
+}
+
+.input-group {
+    display: none;
+    flex-direction: column;
+    animation: fadeIn 1.2s ease;
+    transition: 1s;
+    .input-group-1, .input-group-2 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        input {
+            border: 0;
+            border-bottom: 2px solid #555;
+            padding: 10px;
+            flex: 1;
+            margin-right: 5px;
+        }
+    }
 }

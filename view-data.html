@@ -56,7 +56,47 @@
                     </div>
                     <p id="current-date" class="time">May 6, 2022</p>
                 </div>
-                <table id="all-data">
+                <div class="create-delete-wrap">
+                    <button class="create-btn" onclick="removeButtons()">
+                        <i class="fa fa-user-plus"></i>
+                        Create Employee
+                    </button>
+                    <button class="delete-btn" onclick="removeButtons()">
+                        <i class="fa fa-user-minus"></i>
+                        Delete Employee
+                    </button>
+                </div>
+                <form>
+                    <div class="input-group">
+                        <div class="input-group-1">
+                            <input placeholder="Name" type="text" maxlength="50">
+                            <input placeholder="Age" type="number">
+                            <input placeholder="Gender (M, F, T, or N)" type="text" maxlength="1">
+                            <input placeholder="Height" type="text" maxlength="4">
+                            <input placeholder="Weight" type="number" maxlength="3">
+                            <input placeholder="Body Temp." type="number">
+                        </div>
+                        <div class="input-group-2">
+                            <input placeholder="Pulse Rate" type="number">
+                            <input placeholder="Blood Pressure" type="text" maxlength="7">
+                            <input placeholder="Respiration Rate" type="number">
+                            <input placeholder="Avg. Exercise" type="number">
+                            <input placeholder="Vacation Balance" type="number">
+                            <input placeholder="Avg. Hours Worked" type="number">
+                        </div>
+                        <div class="submit-buttons-wrap">
+                            <button class="create-btn" onclick="createEmployee()">
+                                <i class="fa fa-user-plus"></i>
+                                Submit
+                            </button>
+                            <button class="delete-btn" onclick="cancelForm()">
+                                <i class="fa fa-ban"></i>
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <table class="all-data" id="empData">
                     <thead>
                         <th>Name</th>
                         <th>Age</th>
@@ -67,9 +107,9 @@
                         <th>Pulse Rate</th>
                         <th>Blood Pressure</th>
                         <th>Respiration Rate</th>
-                        <th>Avg. Exercise</th>
+                        <th>Avg. Weekly Exercise</th>
                         <th>Vacation Balance</th>
-                        <th>Avg. Hours Worked</th>
+                        <th>Avg. Work Hours</th>
                     </thead>
                 </table>
                 <div class="loader-container">
