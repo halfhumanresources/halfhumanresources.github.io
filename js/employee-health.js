@@ -41,6 +41,7 @@ function main(param) {
     data = JSON.stringify(param);
     myObj = JSON.parse(data);
     var allData = myObj.list_employeeItems._employeeItems;
+    document.getElementById("loader").style.display = "none";
     parseddata = allData;
     averagepulserateAll = Math.round(avgAll(parseddata));
     arr[3] = averagepulserateAll;
@@ -54,19 +55,27 @@ function main(param) {
         datasets: [{
             label: 'Male',
             data: [arr[0]],
-            backgroundColor: '#36a3ebb3',
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            borderColor: 'rgb(255, 99, 132)',
+            borderWidth: 2
         }, {
             label: 'Female',
             data: [arr[1]],
-            backgroundColor: 'rgba(255, 179, 194, 0.711)',
+            backgroundColor: 'rgba(255, 159, 64, 0.2)',
+            borderColor: 'rgb(255, 159, 64)',
+            borderWidth: 2
         }, {
             label: 'Non-Binary',
             data: [arr[2]],
-            backgroundColor: 'lightgreen',
+            backgroundColor: 'rgba(255, 205, 86, 0.2)',
+            borderColor: 'rgb(255, 205, 86)',
+            borderWidth: 2
         }, {
             label: 'All Employees',
             data: [arr[3]],
-            backgroundColor: 'orange',
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: 'rgb(75, 192, 192)',
+            borderWidth: 2
         }]
     },
     options: {
@@ -92,5 +101,3 @@ function avgAll(stuff) {
     avg = total/count;
     return avg;
 }
-
-

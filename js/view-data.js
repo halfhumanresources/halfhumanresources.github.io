@@ -30,8 +30,9 @@ fetch('https://r0981ch5ff.execute-api.us-west-2.amazonaws.com/graphql/', {
             },
         }),
     })
-    .then((res) => res.json())
-    .then((result) => process(result.data));
+
+.then((res) => res.json())
+.then((result) => process(result.data));
 
 function process(result) {
     data = JSON.stringify(result);
@@ -39,21 +40,35 @@ function process(result) {
     var proc = myObj.list_employeeItems._employeeItems;
     document.getElementById("loader").style.display = "none";
     for (let x in proc) {
-        $('#all-data').append(`
+        $('#empData').append(`
         <tr class="row">
             <th>${proc[x].nameFirst} ${proc[x].nameLast}</th>
             <th>${proc[x].age}</th>
             <th>${proc[x].gender}</th>
             <th>${proc[x].height}</th>
-            <th>${proc[x].weight}</th>
-            <th>${proc[x].bodytemp}</th>
-            <th>${proc[x].pulserate}</th>
+            <th>${proc[x].weight + ' lbs'}</th>
+            <th>${proc[x].bodytemp + '°F'}</th>
+            <th>${proc[x].pulserate + ' BPM'}</th>
             <th>${proc[x].bloodpressure}</th>
             <th>${proc[x].respirationrate}</th>
-            <th>${proc[x].avgWeeklyExercise}</th>
-            <th>${proc[x].vacationBalance}</th>
-            <th>${proc[x].avgWeeklyHours}</th>
+            <th>${proc[x].avgWeeklyExercise + ' hours'}</th>
+            <th>${proc[x].vacationBalance + ' days'}</th>
+            <th>${proc[x].avgWeeklyHours + ' hours'}</th>
         </tr>
     `);
     }
+}
+
+function removeButtons() {
+    $(".create-delete-wrap").css("display", "none");
+    $(".input-group").css("display", "flex");
+}
+function showButtons() {
+    $(".create-delete-wrap").css("display", "flex");
+}
+function createEmployee() {
+    $(".create-delete-wrap").css("display", "flex");
+}
+function cancelForm() {
+    $(".create-delete-wrap").css("display", "flex");
 }

@@ -23,9 +23,10 @@
   --more-list-shadow: rgba(195, 207, 244, 0.1);
   --vendia: #fff;
   --message: rgb(224, 64, 64);
-  --row-bg: #333;
+  --row-bg: rgba(8, 29, 75, 0.7);
   --form-control-color: rebeccapurple;
   --radio-buttons: #223B61;
+  --create-delete: #223B61;
 }
 
 .dark:root {
@@ -46,6 +47,7 @@
   --vendia: #223B61;
   --row-bg: #ececec;
   --radio-buttons: #0069d9;
+  --create-delete: #007bff9d;
 }
 
 * {
@@ -1040,7 +1042,7 @@ i {
           animation-duration: 0.5s;
 }
 
-#all-data {
+.all-data {
   font-family: 'DM Sans', Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
@@ -1048,14 +1050,14 @@ i {
   cursor: default;
 }
 
-#all-data td, #all-data th {
+.all-data td, .all-data th {
   padding: 15px;
   text-align: center;
   font-weight: 400;
   color: var(--main-color);
 }
 
-#all-data thead {
+.all-data thead {
   background-color: transparent;
   border-bottom: 2px solid var(--main-color);
   font-weight: bold;
@@ -1082,6 +1084,8 @@ i {
           animation-iteration-count: infinite;
   -webkit-animation-duration: 0.9s;
           animation-duration: 0.9s;
+  -webkit-transition: 2s;
+  transition: 2s;
 }
 
 .loader-container {
@@ -1100,6 +1104,9 @@ i {
           align-items: center;
   width: 100%;
   margin-top: 50px;
+  -webkit-transition: 2s;
+  transition: 2s;
+  background: transparent;
 }
 
 .loader-container #loader {
@@ -1316,5 +1323,113 @@ input[type="radio"] {
 .wrapper .option span {
   font-size: 20px;
   color: var(--main-color);
+}
+
+#average-employee-health {
+  -webkit-animation: fadeIn;
+          animation: fadeIn;
+  -webkit-transition: 2s;
+  transition: 2s;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+.create-delete-wrap, .submit-buttons-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 20px;
+  -webkit-animation: fadeIn 1.2s ease;
+          animation: fadeIn 1.2s ease;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.create-delete-wrap .create-btn, .create-delete-wrap .delete-btn, .submit-buttons-wrap .create-btn, .submit-buttons-wrap .delete-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  background: var(--app-container);
+  color: var(--main-color);
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  border-radius: 10px;
+  font-weight: bold;
+  outline: none;
+  border: 2px solid var(--main-color);
+  font-size: 17px;
+}
+
+.create-delete-wrap .create-btn i, .create-delete-wrap .delete-btn i, .submit-buttons-wrap .create-btn i, .submit-buttons-wrap .delete-btn i {
+  margin-right: 10px;
+}
+
+.create-delete-wrap .create-btn, .submit-buttons-wrap .create-btn {
+  margin-right: 20px;
+}
+
+.create-delete-wrap .create-btn:hover, .submit-buttons-wrap .create-btn:hover {
+  background: #01ade7;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  color: #fff;
+}
+
+.create-delete-wrap .delete-btn:hover, .submit-buttons-wrap .delete-btn:hover {
+  background: #e04040;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  color: #fff;
+}
+
+input[type="button"] {
+  border: none;
+  outline: none;
+}
+
+.input-group {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-animation: fadeIn 1.2s ease;
+          animation: fadeIn 1.2s ease;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.input-group .input-group-1, .input-group .input-group-2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.input-group .input-group-1 input, .input-group .input-group-2 input {
+  border: 0;
+  border-bottom: 2px solid #555;
+  padding: 10px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-right: 5px;
 }
 /*# sourceMappingURL=styles.css.map */
