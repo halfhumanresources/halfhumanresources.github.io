@@ -57,16 +57,16 @@
                     <p id="current-date" class="time">May 6, 2022</p>
                 </div>
                 <div class="create-delete-wrap">
-                    <button class="create-btn" onclick="removeButtons()">
+                    <button class="create-btn" onclick="removeButtonsCreate()">
                         <i class="fa fa-user-plus"></i>
                         Create Employee
                     </button>
-                    <button class="delete-btn" onclick="removeButtons()">
+                    <button class="delete-btn" onclick="removeButtonsDelete()">
                         <i class="fa fa-user-minus"></i>
                         Delete Employee
                     </button>
                 </div>
-                    <div class="input-group">
+                    <div class="input-group-create">
                         <div class="input-group-1">
                             <input id="empname" placeholder="Name" type="text" maxlength="50">
                             <input id="empage" placeholder="Age" type="number">
@@ -83,7 +83,7 @@
                             <input id="empvacation" placeholder="Vacation Balance" type="number">
                             <input id="emphours" placeholder="Avg. Hours Worked" type="number">
                         </div>
-                        <div class="submit-buttons-wrap">
+                        <div class="submit-buttons-wrap-create">
                             <button class="create-btn" onclick="create_emp()">
                                 <i class="fa fa-user-plus"></i>
                                 Submit
@@ -94,8 +94,23 @@
                             </button>
                         </div>
                     </div>
+                    <div class="input-group-delete">
+                        <input id="empid-delete" placeholder="Enter ID# of Employee to Delete" type="text">
+                        <div class="submit-buttons-wrap-delete">
+                            <button class="create-btn" onclick="delete_emp()">
+                                <i class="fa fa-user-plus"></i>
+                                Submit
+                            </button>
+                            <button class="delete-btn" onclick="cancelForm()">
+                                <i class="fa fa-ban"></i>
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+
                 <table class="all-data" id="empData">
                     <thead>
+                        <th>ID#</th>
                         <th>Name</th>
                         <th>Age</th>
                         <th>Gender</th>

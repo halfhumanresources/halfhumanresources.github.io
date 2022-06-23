@@ -11,6 +11,7 @@ fetch(endpoint, {
             query: `query listQuery {
                 list_employeeItems {
                     _employeeItems {
+                        _id
                         age
                         avgWeeklyExercise
                         avgWeeklyHours
@@ -40,6 +41,7 @@ function process(result) {
     for (let x in proc) {
         $('#empData').append(`
         <tr class="row">
+            <th>${proc[x]._id}</th>
             <th>${proc[x].fullname}</th>
             <th>${proc[x].age}</th>
             <th>${proc[x].gender}</th>
@@ -56,15 +58,29 @@ function process(result) {
     `);
     }
 }
-function removeButtons() {
+function removeButtonsCreate() {
     $(".create-delete-wrap").css("display", "none");
-    $(".input-group").css("display", "flex");
+    $(".input-group-create").css("display", "flex");
+    $(".input-group-1").css("display", "flex");
+    $(".input-group-2").css("display", "flex");
+    $(".submit-buttons-wrap-create").css("display", "flex");
+}
+function removeButtonsDelete() {
+    $(".create-delete-wrap").css("display", "none");
+    $(".input-group-delete").css("display", "flex");
+    $(".submit-buttons-wrap-delete").css("display", "flex");
 }
 function showButtons() {
     $(".create-delete-wrap").css("display", "flex");
 }
 function cancelForm() {
     $(".create-delete-wrap").css("display", "flex");
+    $("input").val('');
+    $(".input-group-1").css("display", "none");
+    $(".input-group-2").css("display", "none");
+    $(".submit-buttons-wrap-create").css("display", "none");
+    $(".submit-buttons-wrap-delete").css("display", "none");
+    $(".input-group-delete").css("display", "none");
 }
 var fullname;
 var age;
@@ -92,6 +108,10 @@ function create_emp() {
     vacation = document.getElementById("empvacation").value;
     hours = document.getElementById("emphours").value;
     $(".create-delete-wrap").css("display", "flex");
+    $(".submit-buttons-wrap-create").css("display", "none");
+    $(".input-group-1").css("display", "none");
+    $(".input-group-2").css("display", "none");
+
     fetch(endpoint, {
         method: 'POST',
         headers: {
@@ -124,6 +144,12 @@ function create_emp() {
             `
         })
     })
+    $("input").val('');
+}
+
+function delete_emp() {
+    $(".input-group-delete").css("display", "none");
+    $(".create-delete-wrap").css("display", "flex");
 }
 
 // "Network error when fetching resource: DELETE ALL FORM TAGS IN HTML, WILL FIX THE ISSUE"
