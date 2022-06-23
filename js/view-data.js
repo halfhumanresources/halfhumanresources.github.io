@@ -66,20 +66,31 @@ function showButtons() {
 function cancelForm() {
     $(".create-delete-wrap").css("display", "flex");
 }
-
+var fullname;
+var age;
+var gender;
+var height;
+var weight;
+var bodytemp;
+var pulse;
+var bp;
+var resp;
+var exercise;
+var vacation;
+var hours;
 function create_emp() {
-    var fullname = document.getElementById("empname").value;
-    var age = document.getElementById("empage").value;
-    var gender = document.getElementById("empgender").value;
-    var height = document.getElementById("empheight").value;
-    var weight = document.getElementById("empweight").value;
-    var bodytemp = document.getElementById("empbodytemp").value;
-    var pulse = document.getElementById("emppulse").value;
-    var bp = document.getElementById("empbp").value;
-    var resp = document.getElementById("empresp").value;
-    var exercise = document.getElementById("empexercise").value;
-    var vacation = document.getElementById("empvacation").value;
-    var hours = document.getElementById("emphours").value;
+    fullname = String(document.getElementById("empname").value);
+    age = document.getElementById("empage").value;
+    gender = String(document.getElementById("empgender").value);
+    height = String(document.getElementById("empheight").value);
+    weight = document.getElementById("empweight").value;
+    bodytemp = document.getElementById("empbodytemp").value;
+    pulse = document.getElementById("emppulse").value;
+    bp = String(document.getElementById("empbp").value);
+    resp = document.getElementById("empresp").value;
+    exercise = document.getElementById("empexercise").value;
+    vacation = document.getElementById("empvacation").value;
+    hours = document.getElementById("emphours").value;
     $(".create-delete-wrap").css("display", "flex");
     fetch(endpoint, {
         method: 'POST',
@@ -91,14 +102,28 @@ function create_emp() {
             query: `
             mutation myMutation {
                 add_employee_async(
-                  input: {age: 1.5, avgWeeklyExercise: 1.5, avgWeeklyHours: 1.5, bloodpressure: "", bodytemp: 1.5, fullname: "", gender: "", height: "", pulserate: 1.5, respirationrate: 1.5, vacationBalance: 1.5, weight: 1.5}
-                ) {
-                  error
+                    input: {
+                        age: ${age},
+                        avgWeeklyExercise: ${exercise},
+                        avgWeeklyHours: ${hours},
+                        bloodpressure: "${bp}",
+                        bodytemp: ${bodytemp},
+                        fullname: "${fullname}",
+                        gender: "${gender}",
+                        height: "${height}",
+                        pulserate: ${pulse},
+                        respirationrate: ${resp},
+                        vacationBalance: ${vacation},
+                        weight: ${weight}
+                    }
+                )
+                {
+                    error
                 }
-              }
+            }
             `
         })
-    }).then((res) => res.json()).then((result) => process(result.data));
+    })
 }
 
 // "Network error when fetching resource: DELETE ALL FORM TAGS IN HTML, WILL FIX THE ISSUE"
