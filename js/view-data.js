@@ -1,6 +1,6 @@
-var data;
-var token = 'WB5xj36cNgDcSoj7te8kyyTsBVh29Y3pmYnk2WkcSJF';
-fetch('https://r0981ch5ff.execute-api.us-west-2.amazonaws.com/graphql/', {
+const endpoint = 'https://zqizr027ij.execute-api.us-west-1.amazonaws.com/graphql/';
+const token = 'H5Y1wL6ifQ2YLC1RDZ4GrB8P2taSXhCG6rg161Lr4hFg';
+fetch(endpoint, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -11,16 +11,14 @@ fetch('https://r0981ch5ff.execute-api.us-west-2.amazonaws.com/graphql/', {
             query: `query listQuery {
                 list_employeeItems {
                     _employeeItems {
-                        _id
                         age
                         avgWeeklyExercise
                         avgWeeklyHours
                         bloodpressure
                         bodytemp
+                        fullname
                         gender
                         height
-                        nameFirst
-                        nameLast
                         pulserate
                         respirationrate
                         vacationBalance
@@ -42,7 +40,7 @@ function process(result) {
     for (let x in proc) {
         $('#empData').append(`
         <tr class="row">
-            <th>${proc[x].nameFirst} ${proc[x].nameLast}</th>
+            <th>${proc[x].fullname}</th>
             <th>${proc[x].age}</th>
             <th>${proc[x].gender}</th>
             <th>${proc[x].height}</th>
@@ -58,7 +56,6 @@ function process(result) {
     `);
     }
 }
-
 function removeButtons() {
     $(".create-delete-wrap").css("display", "none");
     $(".input-group").css("display", "flex");
@@ -66,20 +63,67 @@ function removeButtons() {
 function showButtons() {
     $(".create-delete-wrap").css("display", "flex");
 }
-function createEmployee() {
-    $(".create-delete-wrap").css("display", "flex");
-}
 function cancelForm() {
     $(".create-delete-wrap").css("display", "flex");
 }
-
-// WORKING MUTATION QUERY TO CREATE AN EMPLOYEE !!!
-/* 
-mutation new_emp {
-  add_employee_async(
-    input: {age: 0, avgWeeklyExercise: 0, avgWeeklyHours: 0, bodytemp: 0, bloodpressure: "", gender: "", height: "", nameFirst: "", nameLast: "", pulserate: 0, respirationrate: 0, vacationBalance: 0, weight: 0}
-  ) {
-    error
-  }
+var fullname;
+var age;
+var gender;
+var height;
+var weight;
+var bodytemp;
+var pulse;
+var bp;
+var resp;
+var exercise;
+var vacation;
+var hours;
+function create_emp() {
+    fullname = String(document.getElementById("empname").value);
+    age = document.getElementById("empage").value;
+    gender = String(document.getElementById("empgender").value);
+    height = String(document.getElementById("empheight").value);
+    weight = document.getElementById("empweight").value;
+    bodytemp = document.getElementById("empbodytemp").value;
+    pulse = document.getElementById("emppulse").value;
+    bp = String(document.getElementById("empbp").value);
+    resp = document.getElementById("empresp").value;
+    exercise = document.getElementById("empexercise").value;
+    vacation = document.getElementById("empvacation").value;
+    hours = document.getElementById("emphours").value;
+    $(".create-delete-wrap").css("display", "flex");
+    fetch(endpoint, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': token
+        },
+        body: JSON.stringify({
+            query: `
+            mutation myMutation {
+                add_employee_async(
+                    input: {
+                        age: ${age},
+                        avgWeeklyExercise: ${exercise},
+                        avgWeeklyHours: ${hours},
+                        bloodpressure: "${bp}",
+                        bodytemp: ${bodytemp},
+                        fullname: "${fullname}",
+                        gender: "${gender}",
+                        height: "${height}",
+                        pulserate: ${pulse},
+                        respirationrate: ${resp},
+                        vacationBalance: ${vacation},
+                        weight: ${weight}
+                    }
+                )
+                {
+                    error
+                }
+            }
+            `
+        })
+    })
 }
-*/
+
+// "Network error when fetching resource: DELETE ALL FORM TAGS IN HTML, WILL FIX THE ISSUE"

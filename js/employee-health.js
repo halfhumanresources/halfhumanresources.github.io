@@ -1,6 +1,6 @@
-var data;
-var token = 'WB5xj36cNgDcSoj7te8kyyTsBVh29Y3pmYnk2WkcSJF';
-fetch('https://r0981ch5ff.execute-api.us-west-2.amazonaws.com/graphql/', {
+const endpoint = 'https://zqizr027ij.execute-api.us-west-1.amazonaws.com/graphql/'
+const token = 'H5Y1wL6ifQ2YLC1RDZ4GrB8P2taSXhCG6rg161Lr4hFg';
+fetch(endpoint, {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
@@ -19,8 +19,7 @@ fetch('https://r0981ch5ff.execute-api.us-west-2.amazonaws.com/graphql/', {
                     bodytemp
                     gender
                     height
-                    nameFirst
-                    nameLast
+                    fullname
                     pulserate
                     respirationrate
                     vacationBalance
