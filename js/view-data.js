@@ -1,6 +1,6 @@
-var data;
+var endpoint = 'https://r0981ch5ff.execute-api.us-west-2.amazonaws.com/graphql/';
 var token = 'WB5xj36cNgDcSoj7te8kyyTsBVh29Y3pmYnk2WkcSJF';
-fetch('https://r0981ch5ff.execute-api.us-west-2.amazonaws.com/graphql/', {
+fetch(endpoint, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -42,7 +42,7 @@ function process(result) {
     for (let x in proc) {
         $('#empData').append(`
         <tr class="row">
-            <th>${proc[x].nameFirst} ${proc[x].nameLast}</th>
+            <th>${proc[x].fullname}</th>
             <th>${proc[x].age}</th>
             <th>${proc[x].gender}</th>
             <th>${proc[x].height}</th>
@@ -58,7 +58,6 @@ function process(result) {
     `);
     }
 }
-
 function removeButtons() {
     $(".create-delete-wrap").css("display", "none");
     $(".input-group").css("display", "flex");
@@ -66,20 +65,114 @@ function removeButtons() {
 function showButtons() {
     $(".create-delete-wrap").css("display", "flex");
 }
-function createEmployee() {
-    $(".create-delete-wrap").css("display", "flex");
-}
 function cancelForm() {
     $(".create-delete-wrap").css("display", "flex");
 }
 
-// WORKING MUTATION QUERY TO CREATE AN EMPLOYEE !!!
-/* 
-mutation new_emp {
-  add_employee_async(
-    input: {age: 0, avgWeeklyExercise: 0, avgWeeklyHours: 0, bodytemp: 0, bloodpressure: "", gender: "", height: "", nameFirst: "", nameLast: "", pulserate: 0, respirationrate: 0, vacationBalance: 0, weight: 0}
-  ) {
-    error
-  }
+function create_emp() {
+    var fullname = document.getElementById("empname").value;
+    var age = document.getElementById("empage").value;
+    var gender = document.getElementById("empgender").value;
+    var height = document.getElementById("empheight").value;
+    var weight = document.getElementById("empweight").value;
+    var bodytemp = document.getElementById("empbodytemp").value;
+    var pulse = document.getElementById("emppulse").value;
+    var bp = document.getElementById("empbp").value;
+    var resp = document.getElementById("empresp").value;
+    var exercise = document.getElementById("empexercise").value;
+    var vacation = document.getElementById("empvacation").value;
+    var hours = document.getElementById("emphours").value;
+    $(".create-delete-wrap").css("display", "flex");
+    fetch(endpoint, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': token
+        },
+        body: JSON.stringify({
+            query: `
+                mutation new_emp {
+                    add_employee_async(
+                        input: {
+                            age: 0,
+                            avgWeeklyExercise: 0,
+                            avgWeeklyHours: 0,
+                            bodytemp: 0,
+                            bloodpressure: "",
+                            gender: "f",
+                            height: "",
+                            nameFirst: "",
+                            nameLast: "",
+                            pulserate: 0,
+                            respirationrate: 0,
+                            vacationBalance: 0,
+                            weight: 0
+                        }
+                    ) {
+                        error
+                    }
+                }
+            `,
+        })
+    });
 }
+
+
+/* POSSIBLE QUERY
+        body: JSON.stringify({
+            query: `
+            mutation new_emp($age: Int, $exercise: Int, $hours: Int, $bodytemp: Int, $bp: String, $gender: String, $height: String, $nameFirst: String, $nameLast: String, $pulse: Int, $resp: Int, $vacation: Int, $weight: Int) {
+                add_employee_async(age: $age, exercise: $exercise, hours: $hours, bodytemp: $bodytemp, bp: $bp, gender: $gender, height: $height, nameFirst: $nameFirst, nameLast: $nameLast, pulse: $pulse, resp: $resp, vacation: $vacation, weight: $weight)
+                    age
+                    exercise
+                    hours
+                    bodytemp
+                    bp
+                    gender
+                    height
+                    nameFirst
+                    nameLast
+                    pulse
+                    resp
+                    vacation
+                    weight
+            }`,
+              variables: {
+                "age": age,
+                "exercise": exercise,
+                "hours": hours,
+                "bodytemp": bodytemp,
+                "bp": bp,
+                "gender": gender,
+                "height": height,
+                "nameFirst": fullname,
+                "nameLast": fullname,
+                "pulse": pulse,
+                "resp": resp,
+                "vacation": vacation,
+                "weight": weight
+              },
+        })
+*/
+
+/* 
+            mutation new_emp($age: Int, $exercise: Int, $hours: Int, $bodytemp: Int, $bp: String, $gender: String, $height: String, $nameFirst: String, $nameLast: String, $pulse: Int, $resp: Int, $vacation: Int, $weight: Int) {
+                add_employee_async(
+                    input: {
+                        age: $age
+                        avgWeeklyExercise: 0, 
+                        avgWeeklyHours: 0, 
+                        bodytemp: 0, 
+                        bloodpressure: "",
+                        gender: "", 
+                        height: "", 
+                        nameFirst: "", 
+                        nameLast: "", 
+                        pulserate: 0, 
+                        respirationrate: 0, 
+                        vacationBalance: 0, 
+                        weight: 0
+                    })
+            }
 */
