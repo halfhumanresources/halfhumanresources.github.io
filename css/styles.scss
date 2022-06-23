@@ -26,6 +26,7 @@
     --form-control-color: rebeccapurple;
     --radio-buttons: #223B61;
     --create-delete: #223B61;
+    --inputs: transparent;
 }
 
 .dark:root {
@@ -47,6 +48,7 @@
     --row-bg: #ececec;
     --radio-buttons: #0069d9;
     --create-delete: #007bff9d;
+    --inputs: transparent;
 }
 
 * {
@@ -813,6 +815,9 @@ i {
   text-align: center;
   font-weight: 400;
   color: var(--main-color);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 100px;
 }
 
 .all-data thead {
@@ -923,7 +928,6 @@ input[type="radio"] {
 }
 
 #option-1 {
-   
 	&:checked {
 		&:checked {
 			~ {
@@ -1029,7 +1033,7 @@ input[type="radio"] {
     transition: 2s;
     animation-duration: 2s;
 }
-.create-delete-wrap, .submit-buttons-wrap {
+.create-delete-wrap, .submit-buttons-wrap-create {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1072,7 +1076,7 @@ input[type="button"] {
     outline: none;
 }
 
-.input-group {
+.input-group-create {
     display: none;
     flex-direction: column;
     animation: fadeIn 1.2s ease;
@@ -1083,11 +1087,67 @@ input[type="button"] {
         justify-content: space-between;
         margin-bottom: 20px;
         input {
+            background: var(--inputs);
+            color: var(--main-color);
             border: 0;
-            border-bottom: 2px solid #555;
+            border-bottom: 2px solid var(--main-color);
             padding: 10px;
             flex: 1;
             margin-right: 5px;
         }
+    }
+}
+
+.input-group-delete {
+    display: none;
+    flex-direction: column;
+    animation: fadeIn 1.2s ease;
+    transition: 1s;
+    input {
+        background: var(--inputs);
+        color: var(--main-color);
+        border: 0;
+        border-bottom: 2px solid var(--main-color);
+        padding: 10px;
+        flex: 1;
+        margin-right: 5px;
+    }
+}
+
+.submit-buttons-wrap-delete {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    animation: fadeIn 1.2s ease;
+    transition: 1s;
+    .create-btn, .delete-btn {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        background: var(--app-container);
+        color: var(--main-color);
+        flex: 2;
+        border-radius: 10px;
+        font-weight: bold;
+        outline: none;
+        border: 2px solid var(--main-color);
+        font-size: 17px;
+        i {
+            margin-right: 10px;
+        }
+    }
+    .create-btn {
+        margin-right: 20px;
+    }
+    .create-btn:hover {
+        background: rgb(1, 173, 231);
+        transition: 0.1s;
+        color: #fff;
+    }
+    .delete-btn:hover {
+        background:rgb(224, 64, 64);
+        transition: 0.1s;
+        color: #fff;
     }
 }
