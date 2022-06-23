@@ -41,7 +41,7 @@ function process(result) {
     for (let x in proc) {
         $('#empData').append(`
         <tr class="row">
-            <th>${proc[x]._id}</th>
+            <th class="truncateme show">${proc[x]._id}</th>
             <th>${proc[x].fullname}</th>
             <th>${proc[x].age}</th>
             <th>${proc[x].gender}</th>
@@ -147,9 +147,43 @@ function create_emp() {
     $("input").val('');
 }
 
+var emp_id;
 function delete_emp() {
+    emp_id = String(document.getElementById("empid-delete").value);
     $(".input-group-delete").css("display", "none");
     $(".create-delete-wrap").css("display", "flex");
+    fetch(endpoint, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': token
+        },
+        body: JSON.stringify({
+            query: `
+            mutation myOtherMutation {
+                remove_employee_async(id: "${emp_id}")
+                {
+                    error
+                }
+            }
+            `
+        })
+    })
+    $("input").val('');
 }
 
+function toggleShow() {
+    document.getElementById("idheader").classList.toggle("show");
+    var text = document.getElementById("toggleIDText");
+    if (text.innerHTML == '<i class="fa fa-eye"></i>Show Employee ID Numbers') {
+        text.innerHTML = '<i class="fa fa-eye-slash"></i>Hide Employee ID Numbers';
+    } else if (text.innerHTML == '<i class="fa fa-eye-slash"></i>Hide Employee ID Numbers') {
+        text.innerHTML = '<i class="fa fa-eye"></i>Show Employee ID Numbers';
+    }
+    var all = document.getElementsByClassName("truncateme");
+    for (var i = 0; i < all.length; i++) {
+        all[i].classList.toggle("show");
+    }
+
+}
 // "Network error when fetching resource: DELETE ALL FORM TAGS IN HTML, WILL FIX THE ISSUE"

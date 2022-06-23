@@ -815,9 +815,51 @@ i {
   text-align: center;
   font-weight: 400;
   color: var(--main-color);
-  text-overflow: ellipsis;
-  overflow: hidden;
-  max-width: 100px;
+  animation: fadeIn 1s;
+  transition: 0.3s;
+}
+
+.truncateme {
+    text-overflow: ellipsis;
+    animation: fadeIn;
+    transition: 0.1s;
+}
+
+.show {
+    display: none;
+    animation: fadeIn;
+    transition: 0.1s;
+}
+
+#idheader {
+    font-weight: bold;
+    color:rgb(1, 173, 231);
+    font-size: 20px;
+    animation: fadeIn 0.6s;
+}
+
+#toggleIDText {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: var(--app-container);
+    color: var(--main-color);
+    border-radius: 10px;
+    font-weight: bold;
+    outline: none;
+    border: 2px solid var(--main-color);
+    font-size: 17px;
+    i {
+        margin-right: 10px;
+    }
+}
+
+#toggleIDText:hover {
+    background: rgb(132, 59, 210);
+    transition: 0.1s;
+    color: #fff;
 }
 
 .all-data thead {
