@@ -1,5 +1,5 @@
-var endpoint = 'https://zqizr027ij.execute-api.us-west-1.amazonaws.com/graphql/';
-var token = 'H5Y1wL6ifQ2YLC1RDZ4GrB8P2taSXhCG6rg161Lr4hFg';
+const endpoint = 'https://zqizr027ij.execute-api.us-west-1.amazonaws.com/graphql/';
+const token = 'H5Y1wL6ifQ2YLC1RDZ4GrB8P2taSXhCG6rg161Lr4hFg';
 fetch(endpoint, {
         method: 'POST',
         headers: {
@@ -11,15 +11,14 @@ fetch(endpoint, {
             query: `query listQuery {
                 list_employeeItems {
                     _employeeItems {
-                        _id
                         age
                         avgWeeklyExercise
                         avgWeeklyHours
                         bloodpressure
                         bodytemp
+                        fullname
                         gender
                         height
-                        fullname
                         pulserate
                         respirationrate
                         vacationBalance
@@ -86,92 +85,20 @@ function create_emp() {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Accept': 'application/json',
             'Authorization': token
         },
         body: JSON.stringify({
             query: `
-                mutation new_emp {
-                    add_employee_async(
-                        input: {
-                            age: 0,
-                            avgWeeklyExercise: 0,
-                            avgWeeklyHours: 0,
-                            bodytemp: 0,
-                            bloodpressure: "",
-                            gender: "f",
-                            height: "",
-                            nameFirst: "",
-                            nameLast: "",
-                            pulserate: 0,
-                            respirationrate: 0,
-                            vacationBalance: 0,
-                            weight: 0
-                        }
-                    ) {
-                        error
-                    }
+            mutation myMutation {
+                add_employee_async(
+                  input: {age: 1.5, avgWeeklyExercise: 1.5, avgWeeklyHours: 1.5, bloodpressure: "", bodytemp: 1.5, fullname: "", gender: "", height: "", pulserate: 1.5, respirationrate: 1.5, vacationBalance: 1.5, weight: 1.5}
+                ) {
+                  error
                 }
-            `,
+              }
+            `
         })
-    });
+    }).then((res) => res.json()).then((result) => process(result.data));
 }
 
-
-/* POSSIBLE QUERY
-        body: JSON.stringify({
-            query: `
-            mutation new_emp($age: Int, $exercise: Int, $hours: Int, $bodytemp: Int, $bp: String, $gender: String, $height: String, $nameFirst: String, $nameLast: String, $pulse: Int, $resp: Int, $vacation: Int, $weight: Int) {
-                add_employee_async(age: $age, exercise: $exercise, hours: $hours, bodytemp: $bodytemp, bp: $bp, gender: $gender, height: $height, nameFirst: $nameFirst, nameLast: $nameLast, pulse: $pulse, resp: $resp, vacation: $vacation, weight: $weight)
-                    age
-                    exercise
-                    hours
-                    bodytemp
-                    bp
-                    gender
-                    height
-                    nameFirst
-                    nameLast
-                    pulse
-                    resp
-                    vacation
-                    weight
-            }`,
-              variables: {
-                "age": age,
-                "exercise": exercise,
-                "hours": hours,
-                "bodytemp": bodytemp,
-                "bp": bp,
-                "gender": gender,
-                "height": height,
-                "nameFirst": fullname,
-                "nameLast": fullname,
-                "pulse": pulse,
-                "resp": resp,
-                "vacation": vacation,
-                "weight": weight
-              },
-        })
-*/
-
-/* 
-            mutation new_emp($age: Int, $exercise: Int, $hours: Int, $bodytemp: Int, $bp: String, $gender: String, $height: String, $nameFirst: String, $nameLast: String, $pulse: Int, $resp: Int, $vacation: Int, $weight: Int) {
-                add_employee_async(
-                    input: {
-                        age: $age
-                        avgWeeklyExercise: 0, 
-                        avgWeeklyHours: 0, 
-                        bodytemp: 0, 
-                        bloodpressure: "",
-                        gender: "", 
-                        height: "", 
-                        nameFirst: "", 
-                        nameLast: "", 
-                        pulserate: 0, 
-                        respirationrate: 0, 
-                        vacationBalance: 0, 
-                        weight: 0
-                    })
-            }
-*/
+// "Network error when fetching resource: DELETE ALL FORM TAGS IN HTML, WILL FIX THE ISSUE"

@@ -1,7 +1,6 @@
-var data;
-var url = 'https://zqizr027ij.execute-api.us-west-1.amazonaws.com/graphql/'
-var token = 'H5Y1wL6ifQ2YLC1RDZ4GrB8P2taSXhCG6rg161Lr4hFg';
-fetch(url, {
+const endpoint = 'https://zqizr027ij.execute-api.us-west-1.amazonaws.com/graphql/'
+const token = 'H5Y1wL6ifQ2YLC1RDZ4GrB8P2taSXhCG6rg161Lr4hFg';
+fetch(endpoint, {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',

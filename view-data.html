@@ -66,26 +66,25 @@
                         Delete Employee
                     </button>
                 </div>
-                <form>
                     <div class="input-group">
                         <div class="input-group-1">
-                            <input placeholder="Name" type="text" maxlength="50">
-                            <input placeholder="Age" type="number">
-                            <input placeholder="Gender (M, F, T, or N)" type="text" maxlength="1">
-                            <input placeholder="Height" type="text" maxlength="4">
-                            <input placeholder="Weight" type="number" maxlength="3">
-                            <input placeholder="Body Temp." type="number">
+                            <input id="empname" placeholder="Name" type="text" maxlength="50">
+                            <input id="empage" placeholder="Age" type="number">
+                            <input id="empgender" placeholder="Gender (M, F, T, or N)" type="text" maxlength="1">
+                            <input id="empheight" placeholder="Height" type="text" maxlength="4">
+                            <input id="empweight" placeholder="Weight" type="number" maxlength="3">
+                            <input id="empbodytemp" placeholder="Body Temp." type="number">
                         </div>
                         <div class="input-group-2">
-                            <input placeholder="Pulse Rate" type="number">
-                            <input placeholder="Blood Pressure" type="text" maxlength="7">
-                            <input placeholder="Respiration Rate" type="number">
-                            <input placeholder="Avg. Exercise" type="number">
-                            <input placeholder="Vacation Balance" type="number">
-                            <input placeholder="Avg. Hours Worked" type="number">
+                            <input id="emppulse" placeholder="Pulse Rate" type="number">
+                            <input id="empbp" placeholder="Blood Pressure" type="text" maxlength="7">
+                            <input id="empresp" placeholder="Respiration Rate" type="number">
+                            <input id="empexercise" placeholder="Avg. Exercise" type="number">
+                            <input id="empvacation" placeholder="Vacation Balance" type="number">
+                            <input id="emphours" placeholder="Avg. Hours Worked" type="number">
                         </div>
                         <div class="submit-buttons-wrap">
-                            <button class="create-btn" onclick="createEmployee()">
+                            <button class="create-btn" onclick="create_emp()">
                                 <i class="fa fa-user-plus"></i>
                                 Submit
                             </button>
@@ -95,7 +94,6 @@
                             </button>
                         </div>
                     </div>
-                </form>
                 <table class="all-data" id="empData">
                     <thead>
                         <th>Name</th>
