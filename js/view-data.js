@@ -171,7 +171,6 @@ function delete_emp() {
     })
     $("input").val('');
 }
-
 function toggleShow() {
     document.getElementById("idheader").classList.toggle("show");
     var text = document.getElementById("toggleIDText");
