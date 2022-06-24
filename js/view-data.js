@@ -100,7 +100,7 @@ function create_emp() {
     gender = String(document.getElementById("empgender").value);
     height = String(document.getElementById("empheight").value);
     weight = document.getElementById("empweight").value;
-    bodytemp = document.getElementById("empbodytemp").value;
+    bodytemp = String(document.getElementById("empbodytemp").value);
     pulse = document.getElementById("emppulse").value;
     bp = String(document.getElementById("empbp").value);
     resp = document.getElementById("empresp").value;
@@ -127,7 +127,7 @@ function create_emp() {
                         avgWeeklyExercise: ${exercise},
                         avgWeeklyHours: ${hours},
                         bloodpressure: "${bp}",
-                        bodytemp: ${bodytemp},
+                        bodytemp: "${bodytemp}",
                         fullname: "${fullname}",
                         gender: "${gender}",
                         height: "${height}",
