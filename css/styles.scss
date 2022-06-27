@@ -846,7 +846,7 @@ i {
 #toggleIDText {
     margin-top: 20px;
     margin-bottom: 5px;
-    display: flex;
+    display: none;
     align-items: center;
     padding: 20px;
     background: var(--app-container);
@@ -857,6 +857,7 @@ i {
     border: 2px solid var(--main-color);
     font-size: 17px;
     animation: fadeIn 0.7s;
+    transition: 0.3s;
     i {
         margin-right: 10px;
     }
