@@ -792,11 +792,8 @@ i {
     0% {
         transform: rotateY(0deg);
     }
-    50% {
-        transform: rotateY(360deg);
-    }
     100% {
-        transform: rotateY(0deg);
+        transform: rotateY(360deg);
     }
 }
 
@@ -805,8 +802,7 @@ i {
     .project-box-content-header {
         i {
             animation: 'flip-up';
-            transition: 0.3s;
-            animation-duration: 0.3s;
+            animation-duration: 0.4s;
         }
     }
 }

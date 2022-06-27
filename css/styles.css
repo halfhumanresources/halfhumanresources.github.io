@@ -1024,13 +1024,9 @@ i {
     -webkit-transform: rotateY(0deg);
             transform: rotateY(0deg);
   }
-  50% {
+  100% {
     -webkit-transform: rotateY(360deg);
             transform: rotateY(360deg);
-  }
-  100% {
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
   }
 }
 
@@ -1039,23 +1035,17 @@ i {
     -webkit-transform: rotateY(0deg);
             transform: rotateY(0deg);
   }
-  50% {
+  100% {
     -webkit-transform: rotateY(360deg);
             transform: rotateY(360deg);
-  }
-  100% {
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
   }
 }
 
 .project-box-wrapper:hover .project-box-content-header i {
   -webkit-animation: 'flip-up';
           animation: 'flip-up';
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  -webkit-animation-duration: 0.3s;
-          animation-duration: 0.3s;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
 }
 
 .all-data {
