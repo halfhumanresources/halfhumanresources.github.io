@@ -499,6 +499,34 @@ a {
   z-index: 2;
 }
 
+.app-sidebar-link .fa-house {
+  color: #f99900;
+}
+
+.app-sidebar-link .fa-heart-pulse {
+  color: red;
+}
+
+.app-sidebar-link .fa-chart-simple {
+  color: #1e90ff;
+}
+
+.app-sidebar-link .fa-chart-pie {
+  color: #35d192;
+}
+
+.app-sidebar-link .fa-umbrella-beach {
+  color: #9f7dea;
+}
+
+.app-sidebar-link .fa-clock {
+  color: #04d4b9;
+}
+
+.app-sidebar-link .fa-circle-question {
+  color: #d962ec;
+}
+
 .app-sidebar-link i {
   font-size: 1.6rem;
   z-index: -1;
@@ -506,12 +534,10 @@ a {
 
 .app-sidebar-link:hover {
   background-color: var(--link-color-hover);
-  color: var(--link-color-active);
 }
 
 .app-sidebar-link.active {
   background-color: var(--link-color-active-bg);
-  color: var(--link-color-active);
 }
 
 .projects-section {

@@ -358,17 +358,36 @@ a {
         background: transparent;
         border: none;
         z-index: 2;
+        .fa-house {
+            color:#f99900;
+        }
+        .fa-heart-pulse {
+            color: red;
+        }
+        .fa-chart-simple {
+            color: #1e90ff;
+        }
+        .fa-chart-pie {
+            color: #35d192;
+        }
+        .fa-umbrella-beach {
+            color: #9f7dea;
+        }
+        .fa-clock {
+            color: #04d4b9;
+        }
+        .fa-circle-question {
+            color: #d962ec;
+        }
         i {
             font-size: 1.6rem;
             z-index: -1;
         }
         &:hover {
             background-color: var(--link-color-hover);
-            color: var(--link-color-active);
         }
         &.active {
             background-color: var(--link-color-active-bg);
-            color: var(--link-color-active);
         }
     }
 }
@@ -1233,7 +1252,6 @@ input[type="button"] {
         cursor: pointer;
         transition: 0.3s;
       }
-      
       .closebtn:hover {
         color: red;
       }
