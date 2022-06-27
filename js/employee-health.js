@@ -37,7 +37,7 @@ function main(param) {
 
     var allData = myObj.list_employeeItems._employeeItems;
 
-    document.getElementById("loader").style.display = "none";
+    document.getElementById("loader-wrap").style.display = "none";
 
     var arr = [];
     // START AVERAGE EMPLOYEE HEALTH BY GENDER
