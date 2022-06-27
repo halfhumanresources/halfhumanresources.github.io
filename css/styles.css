@@ -1094,9 +1094,7 @@ i {
 #toggleIDText {
   margin-top: 20px;
   margin-bottom: 5px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1110,6 +1108,8 @@ i {
   font-size: 17px;
   -webkit-animation: fadeIn 0.7s;
           animation: fadeIn 0.7s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 #toggleIDText i {

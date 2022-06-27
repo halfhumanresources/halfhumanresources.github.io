@@ -37,7 +37,8 @@ function process(result) {
     data = JSON.stringify(result);
     myObj = JSON.parse(data);
     var proc = myObj.list_employeeItems._employeeItems;
-    document.getElementById("loader-wrap").style.display = "none";
+    $("#loader-wrap").css("display", "none");
+    $("#toggleIDText").css("display", "flex");
     for (let x in proc) {
         $('#empData').append(`
         <tr class="row">
