@@ -111,7 +111,8 @@ function create_emp() {
     $(".submit-buttons-wrap-create").css("display", "none");
     $(".input-group-1").css("display", "none");
     $(".input-group-2").css("display", "none");
-
+    $(".create-alert").css("display", "flex");
+    $(".delete-alert").css("display", "none");
     fetch(endpoint, {
         method: 'POST',
         headers: {
@@ -150,8 +151,10 @@ function create_emp() {
 var emp_id;
 function delete_emp() {
     emp_id = String(document.getElementById("empid-delete").value);
+    $(".delete-alert").css("display", "flex");
     $(".input-group-delete").css("display", "none");
     $(".create-delete-wrap").css("display", "flex");
+    $(".create-alert").css("display", "none");
     fetch(endpoint, {
         method: 'POST',
         headers: {

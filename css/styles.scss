@@ -895,7 +895,6 @@ i {
     align-items: center;
     width: 100%;
     margin-top: 50px;
-    transition: 2s;
     background: transparent;
     #loader {
         display: flex;
@@ -908,6 +907,7 @@ i {
         }
         i {
             font-size: 40px;
+            transition: 0s;
             color: var(--main-color);
         }
     }
@@ -1205,4 +1205,76 @@ input[type="button"] {
         transition: 0.1s;
         color: #fff;
     }
+}
+
+.create-alert {
+    display: none;
+    padding: 20px;
+    color: var(--main-color);
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 2px solid rgb(1, 173, 231);
+    background-color:rgba(1, 174, 231, 0.447);
+    animation: flyInUp 0.3s;
+    transition: 0.5s;
+    align-items: center;
+    justify-content: space-between;
+    p {
+        margin: 0;
+    }
+    .closebtn {
+        margin-left: 15px;
+        color: white;
+        font-weight: bold;
+        float: right;
+        font-size: 40px;
+        line-height: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      
+      .closebtn:hover {
+        color: red;
+      }
+  }
+.delete-alert {
+  display: none;
+  padding: 20px;
+  color: var(--main-color);
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 2px solid rgb(132, 59, 210);
+  background-color: rgba(132, 59, 210, 0.341);
+  animation: flyInUp 0.3s;
+  transition: 0.5s;
+  align-items: center;
+  justify-content: space-between;
+  p {
+      margin: 0;
+  }
+  .closebtn {
+      margin-left: 15px;
+      color: white;
+      font-weight: bold;
+      float: right;
+      font-size: 40px;
+      line-height: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    
+    .closebtn:hover {
+      color: red;
+    }
+}
+
+
+  @keyframes flyInUp {
+    from {margin-top: 2000px}
+    to {margin-top: 0px}
+  }
+
+canvas {
+  max-width: 100vw;
+  max-height: 450px;
 }
