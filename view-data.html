@@ -73,7 +73,7 @@
                             <input id="empgender" placeholder="Gender (M, F, T, or N)" type="text" maxlength="1">
                             <input id="empheight" placeholder="Height (ft'in)" type="text" maxlength="4">
                             <input id="empweight" placeholder="Weight (lbs)" type="number" maxlength="3">
-                            <input id="empbodytemp" placeholder="Body Temp. (&deg;F)" type="text">
+                            <input id="empbodytemp" placeholder="Body Temp. (&deg;F)" type="float">
                         </div>
                         <div class="input-group-2">
                             <input id="emppulse" placeholder="Pulse Rate (BPM)" type="number">
@@ -127,7 +127,7 @@
                         <th>Avg. Work Hours</th>
                     </thead>
                 </table>
-                <div class="loader-container">
+                <div id="loader-wrap" class="loader-container">
                     <div id="loader">
                         <h1>Fetching Employee Data</h1>
                         <i class="fa fa-spinner spinner"></i>
