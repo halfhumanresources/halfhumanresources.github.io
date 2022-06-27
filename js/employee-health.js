@@ -109,7 +109,8 @@ function main(param) {
     femaleAverageResp = femaleRespSum/femaleCount;
     nbAverageResp = nbRespSum/nbCount;
     transAverageResp = transRespSum/transCount;
-
+    console.log(maleAverageExercise);
+    console.log(femaleAverageExercise);
     // if *radio button* .checked then set array values to respective averages
     var pulseRadioBtn = document.getElementById("option-1");
     var exerciseRadioBtn = document.getElementById("option-2");
