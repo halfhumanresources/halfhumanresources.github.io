@@ -1,5 +1,5 @@
 # Description
-### A lightweight, responsive UI that calls Vendia's API to allow for HR employees to read and write data to their employee arrays. Does not require any downloads, installations, or packages. Simply double-click any html file (index.html = home) and everything else is taken care of.
+A lightweight, responsive UI that calls Vendia's API to allow for HR employees to read and write data to their employee arrays. Does not require any downloads, installations, or packages. Simply double-click any html file (index.html = home) and everything else is taken care of.
 
 # Our Tech Stack
 
