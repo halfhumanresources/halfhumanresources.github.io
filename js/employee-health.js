@@ -161,7 +161,7 @@ function main(param) {
     }
 
     // END EMPLOYEE HEALTH BY GENDER
-
+    
     const ctx = document.getElementById('average-employee-health').getContext('2d');
     const myChart = new Chart(ctx, {
     type: 'bar',

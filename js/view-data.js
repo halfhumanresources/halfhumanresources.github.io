@@ -186,6 +186,5 @@ function toggleShow() {
     for (var i = 0; i < all.length; i++) {
         all[i].classList.toggle("show");
     }
-
 }
 // "Network error when fetching resource: DELETE ALL FORM TAGS IN HTML, WILL FIX THE ISSUE"
