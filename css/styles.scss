@@ -359,13 +359,13 @@ a {
         border: none;
         z-index: 2;
         .fa-house {
-            color:#f99900;
+            color:#1e90ff;
         }
         .fa-heart-pulse {
             color: red;
         }
         .fa-chart-simple {
-            color: #1e90ff;
+            color: #ff8f1e;
         }
         .fa-chart-pie {
             color: #35d192;
@@ -377,7 +377,7 @@ a {
             color: #04d4b9;
         }
         .fa-circle-question {
-            color: #d962ec;
+            color: #9f7dea;
         }
         i {
             font-size: 1.6rem;
@@ -1011,7 +1011,6 @@ input[type="radio"] {
 				.option-1 {
 					border-color: var(--radio-border);
 					background: var(--radio-buttons);
-                    width: 110%;
 					.dot {
 						background: #fff;
 						&::before {
@@ -1034,7 +1033,6 @@ input[type="radio"] {
 				.option-2 {
 					border-color: var(--radio-border);
 					background: var(--radio-buttons);
-                    width: 110%;
 					.dot {
 						background: #fff;
 						&::before {
@@ -1057,7 +1055,6 @@ input[type="radio"] {
 				.option-3 {
 					border-color: var(--radio-border);
 					background: var(--radio-buttons);
-                    width: 110%;
 					.dot {
 						background: #fff;
 						&::before {
@@ -1080,7 +1077,6 @@ input[type="radio"] {
 				.option-4 {
 					border-color: var(--radio-border);
 					background: var(--radio-buttons);
-                    width: 110%;
 					.dot {
 						background: #fff;
 						&::before {
@@ -1296,4 +1292,14 @@ input[type="button"] {
 canvas {
   max-width: 100%;
   max-height: 60vh;
+}
+
+.svg-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+        max-height: 50px;
+        margin-bottom:5px;
+    }
 }

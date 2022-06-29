@@ -500,7 +500,7 @@ a {
 }
 
 .app-sidebar-link .fa-house {
-  color: #f99900;
+  color: #1e90ff;
 }
 
 .app-sidebar-link .fa-heart-pulse {
@@ -508,7 +508,7 @@ a {
 }
 
 .app-sidebar-link .fa-chart-simple {
-  color: #1e90ff;
+  color: #ff8f1e;
 }
 
 .app-sidebar-link .fa-chart-pie {
@@ -524,7 +524,7 @@ a {
 }
 
 .app-sidebar-link .fa-circle-question {
-  color: #d962ec;
+  color: #9f7dea;
 }
 
 .app-sidebar-link i {
@@ -1346,7 +1346,6 @@ input[type="radio"] {
 #option-1:checked:checked ~ .option-1 {
   border-color: var(--radio-border);
   background: var(--radio-buttons);
-  width: 110%;
 }
 
 #option-1:checked:checked ~ .option-1 .dot {
@@ -1366,7 +1365,6 @@ input[type="radio"] {
 #option-2:checked:checked ~ .option-2 {
   border-color: var(--radio-border);
   background: var(--radio-buttons);
-  width: 110%;
 }
 
 #option-2:checked:checked ~ .option-2 .dot {
@@ -1386,7 +1384,6 @@ input[type="radio"] {
 #option-3:checked:checked ~ .option-3 {
   border-color: var(--radio-border);
   background: var(--radio-buttons);
-  width: 110%;
 }
 
 #option-3:checked:checked ~ .option-3 .dot {
@@ -1406,7 +1403,6 @@ input[type="radio"] {
 #option-4:checked:checked ~ .option-4 {
   border-color: var(--radio-border);
   background: var(--radio-buttons);
-  width: 110%;
 }
 
 #option-4:checked:checked ~ .option-4 .dot {
@@ -1716,5 +1712,22 @@ input[type="button"] {
 canvas {
   max-width: 100%;
   max-height: 60vh;
+}
+
+.svg-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.svg-div svg {
+  max-height: 50px;
+  margin-bottom: 5px;
 }
 /*# sourceMappingURL=styles.css.map */

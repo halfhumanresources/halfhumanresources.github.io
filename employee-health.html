@@ -34,12 +34,6 @@
                     <a href="analytics-statistics.html" class="app-sidebar-link green">
                         <i class="fa-solid fa-chart-pie"></i>
                     </a>
-                    <a href="vacation-time.html" class="app-sidebar-link purple">
-                        <i class="fa-solid fa-umbrella-beach"></i>
-                    </a>
-                    <a href="lunch-breaks.html" class="app-sidebar-link turquoise">
-                        <i class="fa-solid fa-clock"></i>
-                    </a>
                     <a href="other-metrics.html" class="app-sidebar-link pink">
                         <i class="fa-solid fa-circle-question"></i>
                     </a>
@@ -63,11 +57,11 @@
                                 </div>
                             </div>
                             <canvas id="average-employee-health"></canvas>
-                            <form id="health-options">
+
                                 <div class="wrapper">
-                                    <input checked="checked" type="radio" onclick="location.reload()" name="select" id="option-1">
-                                    <input type="radio" onclick="location.reload()" name="select" id="option-2">
-                                    <input type="radio" onclick="location.reload()" name="select" id="option-4">
+                                    <input onclick="option1check()" type="radio" name="select" id="option-1">
+                                    <input onclick="option2check()" type="radio" name="select" id="option-2">
+                                    <input onclick="option3check()" type="radio" name="select" id="option-4">
                                     <label for="option-1" class="option option-1">
                                         <div class="dot"></div>
                                         <span><i class="fa-solid fa-heart-pulse"></i> Pulse Rate</span>
@@ -81,7 +75,7 @@
                                         <span><i class="fa-solid fa-lungs"></i> Respiration Rate</span>
                                     </label>
                                 </div>
-                            </form>
+                            
                         </div>
                     </div>
                 </div>
