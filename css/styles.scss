@@ -807,14 +807,7 @@ i {
     opacity: 1;
 }
 
-@keyframes flip-up {
-    0% {
-        transform: rotateY(0deg);
-    }
-    100% {
-        transform: rotateY(360deg);
-    }
-}
+
 
 
 .project-box-wrapper:hover {
@@ -858,7 +851,6 @@ i {
 #idheader {
     font-weight: bold;
     color:rgb(1, 173, 231);
-    font-size: 20px;
     animation: fadeIn 0.7s;
 }
 
@@ -933,15 +925,6 @@ i {
     }
 }
 
-@keyframes fadeIn {
-    0% {opacity: 0;}
-    to {opacity: 1;}
-}
-
-@keyframes spin {
-    from {transform: rotate(0deg);}
-    to {transform: rotate(360deg);}
-}
 #health-container {
     .wrapper {
         display: flex;
@@ -1283,15 +1266,13 @@ input[type="button"] {
     }
 }
 
-
-  @keyframes flyInUp {
-    from {margin-top: 2000px}
-    to {margin-top: 0px}
-  }
-
 canvas {
-  max-width: 100%;
-  max-height: 60vh;
+    max-width: 100%;
+    max-height: 50vh;
+    transition: 0.5s;
+    animation: fadeIn 0.5s;
+    overflow: hidden;
+    display: flex;
 }
 
 .svg-div {
@@ -1302,4 +1283,39 @@ canvas {
         max-height: 50px;
         margin-bottom:5px;
     }
+}
+
+#loader-wrap {
+    animation: fadeIn 0.5s;
+    transition: 0.3s;
+    height: 50px;
+}
+
+.radio-wrapper {
+    margin-bottom:0;
+    padding-bottom: 0;
+}
+
+@keyframes flip-up {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes spin {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+@keyframes flyInUp {
+    from {margin-top: 2000px; overflow-y: hidden;}
+    to {margin-top: 0px; overflow-y: show;}
 }
