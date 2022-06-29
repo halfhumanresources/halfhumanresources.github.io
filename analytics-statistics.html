@@ -37,12 +37,6 @@
                 <a href="analytics-statistics.html" class="app-sidebar-link green active">
                     <i class="fa-solid fa-chart-pie"></i>
                 </a>
-                <a href="vacation-time.html" class="app-sidebar-link purple">
-                    <i class="fa-solid fa-umbrella-beach"></i>
-                </a>
-                <a href="lunch-breaks.html" class="app-sidebar-link turquoise">
-                    <i class="fa-solid fa-clock"></i>
-                </a>
                 <a href="other-metrics.html" class="app-sidebar-link pink">
                     <i class="fa-solid fa-circle-question"></i>
                 </a>
@@ -66,52 +60,7 @@
     <script src="js/scripts.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        const radar_chart = document.getElementById('average-employee-data').getContext('2d');
-        const radarChart = new Chart(radar_chart, {
-        type: 'bar',
-        data: {
-            labels: ["Exercise (%)", "Breaks (%)", "Hours Worked (%)", "Lunch (%)", "Vacations (%)"],
-            datasets: [
-                {
-                label: 'Toggle Data',
-                data: [90, 100, 85, 95, 50],
-                backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(255, 159, 64, 0.2)',
-                'rgba(255, 205, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(54, 162, 235, 0.2)'
-                ],
-                borderColor: [
-                'rgb(255, 99, 132)',
-                'rgb(255, 159, 64)',
-                'rgb(255, 205, 86)',
-                'rgb(75, 192, 192)',
-                'rgb(54, 162, 235)'
-                ],
-                borderWidth: 2,
-                },
-
-            ]
-        },
-        options: {
-            scales: {
-                x: {
-                    ticks: {
-                        color: '#777',
-                    }
-                },
-                y: {
-                    ticks: {
-                        color: '#777',
-                    }
-                }
-            }
-        }
-        });
-    </script>
-    <script src="js/utils.js"></script>
+    <script src="js/analytics-statistics.js"></script>
 </body>
 
 </html>

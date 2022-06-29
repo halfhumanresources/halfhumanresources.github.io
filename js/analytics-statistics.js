@@ -30,77 +30,58 @@ body: JSON.stringify({
 }),
 }).then((res) => res.json()).then((result) => main(result.data));
 
-function option1check() {
-    document.getElementById("option-1").checked = true;
-    document.getElementById("option-2").checked = false;
-    document.getElementById("option-4").checked = false;
-    location.reload();
-}
-function option2check() {
-    document.getElementById("option-1").checked = false;
-    document.getElementById("option-2").checked = true;
-    document.getElementById("option-4").checked = false;
-    location.reload();
-}
-function option3check() {
-    document.getElementById("option-1").checked = false;
-    document.getElementById("option-2").checked = false;
-    document.getElementById("option-4").checked = true;
-    location.reload();
-}
 function main(param) {
     var data = JSON.stringify(param);
     var myObj = JSON.parse(data);
 
     var allData = myObj.list_employeeItems._employeeItems;
 
-    document.getElementById("loader-wrap").style.display = "none";
+    //document.getElementById("loader-wrap").style.display = "none";
 
-    var arr = [];
     // START AVERAGE EMPLOYEE HEALTH BY GENDER
     var maleCount =0, femaleCount=0, nbCount=0, transCount=0;
     var employeeCount=0;
 
-    var maleAveragePulse=0, femaleAveragePulse=0, nbAveragePulse=0, transAveragePulse=0;
-    var malePulseSum=0, femalePulseSum=0, nbPulseSum=0, transPulseSum=0;
+    var maleAverageWork=0, femaleAverageWork=0, nbAverageWork=0, transAverageWork=0;
+    var maleWorkSum=0, femaleWorkSum=0, nbWorkSum=0, transWorkSum=0;
 
     var maleAverageExercise=0, femaleAverageExercise=0, nbAverageExercise=0, transAverageExercise=0;
     var maleExerciseSum=0, femaleExerciseSum=0, nbExerciseSum=0, transExerciseSum=0;
 
-    var maleAverageResp=0, femaleAverageResp=0, nbAverageResp=0, transAverageResp=0;
-    var maleRespSum=0, femaleRespSum=0, nbRespSum=0, transRespSum=0;
+    var maleAverageVacation=0, femaleAverageVacation=0, nbAverageVacation=0, transAverageVacation=0;
+    var maleVacationSum=0, femaleVacationSum=0, nbVacationSum=0, transVacationSum=0;
 
-    var allAveragePulse=0, allAverageExercise=0, allAverageResp=0;
-    var allPulseSum=0, allExerciseSum=0, allRespSum=0;
+    var allAverageWork=0, allAverageExercise=0, allAverageVacation=0;
+    var allWorkSum=0, allExerciseSum=0, allVacationSum=0;
 
     for (let y in allData) {
-        allPulseSum += allData[y].pulserate;
+        allWorkSum += allData[y].avgWeeklyHours;
         allExerciseSum += allData[y].avgWeeklyExercise;
-        allRespSum += allData[y].respirationrate;
+        allVacationSum += allData[y].vacationBalance;
         employeeCount++;
         if (allData[y].gender == "M") {
             maleCount++;
-            malePulseSum += allData[y].pulserate;
+            maleWorkSum += allData[y].avgWeeklyHours;
             maleExerciseSum += allData[y].avgWeeklyExercise;
-            maleRespSum += allData[y].respirationrate;
+            maleVacationSum += allData[y].vacationBalance;
         }
         if (allData[y].gender == "F") {
             femaleCount++;
-            femalePulseSum += allData[y].pulserate;
+            femaleWorkSum += allData[y].avgWeeklyHours;
             femaleExerciseSum += allData[y].avgWeeklyExercise;
-            femaleRespSum += allData[y].respirationrate;
+            femaleVacationSum += allData[y].vacationBalance;
         }
         if (allData[y].gender == "N") {
             nbCount++;
-            nbPulseSum += allData[y].pulserate;
+            nbWorkSum += allData[y].avgWeeklyHours;
             nbExerciseSum += allData[y].avgWeeklyExercise;
-            nbRespSum += allData[y].respirationrate;
+            nbVacationSum += allData[y].vacationBalance;
         }
         if (allData[y].gender == "T") {
             transCount++;
-            transPulseSum += allData[y].pulserate;
+            transWorkSum += allData[y].avgWeeklyHours;
             transExerciseSum += allData[y].avgWeeklyExercise;
-            transRespSum += allData[y].respirationrate;
+            transVacationSum += allData[y].vacationBalance;
         }
     }
     console.log(maleCount + " Male Employees found.");
@@ -108,95 +89,95 @@ function main(param) {
     console.log(nbCount + " Non-Binary Employees found.");
     console.log(transCount + " Transgender Employees found.");
 
-    allAveragePulse = allPulseSum/employeeCount;
+    allAverageWork = allWorkSum/employeeCount;
     allAverageExercise = allExerciseSum/employeeCount;
-    allAverageResp = allRespSum/employeeCount;
+    allAverageVacation = allVacationSum/employeeCount;
 
-    maleAveragePulse = malePulseSum/maleCount;
-    femaleAveragePulse = femalePulseSum/femaleCount;
-    nbAveragePulse = nbPulseSum/nbCount;
-    transAveragePulse = transPulseSum/transCount;
+    maleAverageWork = maleWorkSum/maleCount;
+    femaleAverageWork = femaleWorkSum/femaleCount;
+    nbAverageWork = nbWorkSum/nbCount;
+    transAverageWork = transWorkSum/transCount;
 
     maleAverageExercise = maleExerciseSum/maleCount;
     femaleAverageExercise = femaleExerciseSum/femaleCount;
     nbAverageExercise = nbExerciseSum/nbCount;
     transAverageExercise = transExerciseSum/transCount;
 
-    maleAverageResp = maleRespSum/maleCount;
-    femaleAverageResp = femaleRespSum/femaleCount;
-    nbAverageResp = nbRespSum/nbCount;
-    transAverageResp = transRespSum/transCount;
-    console.log(maleAverageExercise);
-    console.log(femaleAverageExercise);
+    maleAverageVacation = maleVacationSum/maleCount;
+    femaleAverageVacation = femaleVacationSum/femaleCount;
+    nbAverageVacation = nbVacationSum/nbCount;
+    transAverageVacation = transVacationSum/transCount;
+
     // if *radio button* .checked then set array values to respective averages
-    var pulseRadioBtn = document.getElementById("option-1");
+    /*var WorkRadioBtn = document.getElementById("option-1");
     var exerciseRadioBtn = document.getElementById("option-2");
     var respRadioBtn = document.getElementById("option-4");
 
     var chartTitle = document.getElementById("eh-table-title");
+    */
+    var workArr = [];
+    var exerciseArr = [];
+    var vacationArr = []
 
-    if (pulseRadioBtn.checked) {
-        arr[0] = maleAveragePulse;
-        arr[1] = femaleAveragePulse;
-        arr[2] = nbAveragePulse;
-        arr[3] = transAveragePulse;
-        arr[4] = allAveragePulse;
-        chartTitle.innerHTML = "Average Employee Pulse Rate (BPM)";
-    }
-    if (exerciseRadioBtn.checked) {
-        arr[0] = maleAverageExercise;
-        arr[1] = femaleAverageExercise;
-        arr[2] = nbAverageExercise;
-        arr[3] = transAverageExercise;
-        arr[4] = allAverageExercise;
-        chartTitle.innerHTML = "Average Weekly Employee Exercise (Hours)";
-    }
-    if (respRadioBtn.checked) {
-        arr[0] = maleAverageResp;
-        arr[1] = femaleAverageResp;
-        arr[2] = nbAverageResp;
-        arr[3] = transAverageResp;
-        arr[4] = allAverageResp;
-        chartTitle.innerHTML = "Average Employee Respiration Rate (Breaths/Minute)";
-    }
+    workArr[0] = maleAverageWork;
+    workArr[1] = femaleAverageWork;
+    workArr[2] = nbAverageWork;
+    workArr[3] = transAverageWork;
+    workArr[4] = allAverageWork;
 
-    // END EMPLOYEE HEALTH BY GENDER
+    exerciseArr[0] = maleAverageExercise;
+    exerciseArr[1] = femaleAverageExercise;
+    exerciseArr[2] = nbAverageExercise;
+    exerciseArr[3] = transAverageExercise;
+    exerciseArr[4] = allAverageExercise;
 
-    const ctx = document.getElementById('average-employee-health').getContext('2d');
+    vacationArr[0] = maleAverageVacation;
+    vacationArr[1] = femaleAverageVacation;
+    vacationArr[2] = nbAverageVacation;
+    vacationArr[3] = transAverageVacation;
+    vacationArr[4] = allAverageVacation;
+
+
+    const ctx = document.getElementById('average-employee-data').getContext('2d');
     const myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: " ",
+        labels: ["Weekly Hours Worked", "Accrued Vacation Time (Days)"],
         datasets: [{
             label: 'Male',
-            data: [arr[0]],
+            data: [workArr[0], vacationArr[0]],
             backgroundColor: 'rgba(255, 99, 132, 0.2)',
             borderColor: 'rgb(255, 99, 132)',
-            borderWidth: 2
+            borderWidth: 2,
+            borderRadius: 4
         }, {
             label: 'Female',
-            data: [arr[1]],
+            data: [workArr[1], vacationArr[1]],
             backgroundColor: 'rgba(255, 159, 64, 0.2)',
             borderColor: 'rgb(255, 159, 64)',
-            borderWidth: 2
+            borderWidth: 2,
+            borderRadius: 4
         }, {
             label: 'Non-Binary',
-            data: [arr[2]],
+            data: [workArr[2], vacationArr[2]],
             backgroundColor: 'rgba(255, 205, 86, 0.2)',
             borderColor: 'rgb(255, 205, 86)',
-            borderWidth: 2
+            borderWidth: 2,
+            borderRadius: 4
         }, {
             label: 'Transgender',
-            data: [arr[3]],
+            data: [workArr[3], vacationArr[3]],
             backgroundColor: 'rgba(54, 163, 235, 0.2)',
             borderColor: '#36a2eb',
-            borderWidth: 2
+            borderWidth: 2,
+            borderRadius: 4
         }, {
             label: 'All Employees',
-            data: [arr[4]],
+            data: [workArr[4], vacationArr[4]],
             backgroundColor: 'rgba(75, 192, 192, 0.2)',
             borderColor: 'rgb(75, 192, 192)',
-            borderWidth: 2
+            borderWidth: 2,
+            borderRadius: 4
         }]
     },
     options: {
@@ -208,5 +189,13 @@ function main(param) {
             }
         }
     }
-});
+    });
 }
+
+
+
+
+
+
+
+

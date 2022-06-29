@@ -30,8 +30,7 @@ fetch(endpoint, {
         }),
     })
 
-.then((res) => res.json())
-.then((result) => process(result.data));
+.then((res) => res.json()).then((result) => process(result.data));
 
 function process(result) {
     data = JSON.stringify(result);
