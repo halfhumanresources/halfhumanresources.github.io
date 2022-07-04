@@ -31,6 +31,7 @@
   --radio-border: #3966aa;
   --create-delete: #223B61;
   --inputs: transparent;
+  --chevron: url(../img/chevron-down-dark.png);
 }
 
 .dark:root {
@@ -56,6 +57,7 @@
   --radio-border: #0069d9;
   --create-delete: #007bff9d;
   --inputs: transparent;
+  --chevron: url(../img/chevron-down.webp);
 }
 
 * {
@@ -1470,10 +1472,11 @@ input[type="button"] {
 
 .input-group-create .input-group-1 select, .input-group-create .input-group-2 select {
   font-size: 16px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: url(../img/chevron-down.webp) 96%/15% no-repeat #fff;
+  color: var(--main-color);
+}
+
+.input-group-create .input-group-1 select option, .input-group-create .input-group-2 select option {
+  color: black;
 }
 
 .input-group-delete {
