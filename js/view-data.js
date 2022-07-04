@@ -64,6 +64,7 @@ function removeButtonsCreate() {
     $(".input-group-1").css("display", "flex");
     $(".input-group-2").css("display", "flex");
     $(".submit-buttons-wrap-create").css("display", "flex");
+	document.getElementById("create-btn").innerHTML = '<i class="fa fa-user-plus"></i>Submit';
 }
 function removeButtonsDelete() {
     $(".create-delete-wrap").css("display", "none");
@@ -81,6 +82,8 @@ function cancelForm() {
     $(".submit-buttons-wrap-create").css("display", "none");
     $(".submit-buttons-wrap-delete").css("display", "none");
     $(".input-group-delete").css("display", "none");
+	
+	document.getElementById("create-btn").innerHTML = '<i class="fa fa-user-plus"></i>Submit';
 }
 var fullname;
 var age;
@@ -107,45 +110,74 @@ function create_emp() {
     exercise = document.getElementById("empexercise").value;
     vacation = document.getElementById("empvacation").value;
     hours = document.getElementById("emphours").value;
-    $(".create-delete-wrap").css("display", "flex");
-    $(".submit-buttons-wrap-create").css("display", "none");
-    $(".input-group-1").css("display", "none");
-    $(".input-group-2").css("display", "none");
-    $(".create-alert").css("display", "flex");
-    $(".delete-alert").css("display", "none");
-    fetch(endpoint, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': token
-        },
-        body: JSON.stringify({
-            query: `
-            mutation myMutation {
-                add_employee_async(
-                    input: {
-                        age: ${age},
-                        avgWeeklyExercise: ${exercise},
-                        avgWeeklyHours: ${hours},
-                        bloodpressure: "${bp}",
-                        bodytemp: ${bodytemp},
-                        fullname: "${fullname}",
-                        gender: "${gender}",
-                        height: "${height}",
-                        pulserate: ${pulse},
-                        respirationrate: ${resp},
-                        vacationBalance: ${vacation},
-                        weight: ${weight}
-                    }
-                )
-                {
-                    error
-                }
-            }
-            `
-        })
-    })
-    $("input").val('');
+	if(
+		(fullname.length > 0)
+		&&
+		(age > 0)
+		&&
+		(height > 0)
+		&&
+		(weight > 0)
+		&&
+		(bodytemp > 0)
+		&&
+		(pulse > 0)
+		&&
+		(bp > 0)
+		&&
+		(resp > 0)
+		&&
+		(exercise >= 0)
+		&&
+		(vacation >= 0)
+		&&
+		(hours >= 0)){
+			$(".create-delete-wrap").css("display", "flex");
+			$(".submit-buttons-wrap-create").css("display", "none");
+			$(".input-group-1").css("display", "none");
+			$(".input-group-2").css("display", "none");
+			$(".create-alert").css("display", "flex");
+			$(".delete-alert").css("display", "none");
+		
+			fetch(endpoint, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					'Authorization': token
+				},
+				body: JSON.stringify({
+					query: `
+					mutation myMutation {
+						add_employee_async(
+							input: {
+								age: ${age},
+								avgWeeklyExercise: ${exercise},
+								avgWeeklyHours: ${hours},
+								bloodpressure: "${bp}",
+								bodytemp: ${bodytemp},
+								fullname: "${fullname}",
+								gender: "${gender}",
+								height: "${height}",
+								pulserate: ${pulse},
+								respirationrate: ${resp},
+								vacationBalance: ${vacation},
+								weight: ${weight}
+							}
+						)
+						{
+							error
+						}
+					}
+					`
+				})
+			})
+			$("input").val('');
+			document.getElementById("create-btn").innerHTML = '<i class="fa fa-user-plus"></i>Submit'
+		}
+		else{
+			document.getElementById("create-btn").innerHTML = '<i class="fa fa-user-plus"></i> Submit [Please complete and try again]';
+		}
+		;
 }
 
 var emp_id;
