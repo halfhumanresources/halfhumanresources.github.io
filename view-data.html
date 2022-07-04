@@ -58,6 +58,10 @@
                     <p><strong>Important:</strong><br> Deletion of employee data may take up to 30 seconds to reflect accurately on this page; refresh the page to verify your employee has been removed successfully.</p>
                     <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
                 </div>
+                <div class="incomplete-alert">
+                    <p><strong>Error:</strong><br> Form is incomplete, please ensure all fields have been filled correctly and try again.</p>
+                    <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+                </div>
                 <div class="create-delete-wrap">
                     <button class="create-btn" onclick="removeButtonsCreate()">
                         <i class="fa fa-user-plus"></i>
@@ -101,7 +105,7 @@
 								<option value="M">Male</option>
 								<option value="F">Female</option>
 								<option value="T">Transgender</option>
-								<option value="N">Neutral</option>
+								<option value="N">Non-binary</option>
 							</select>
                             <input id="empheight" placeholder="Height (ft'in)" type="text" maxlength="4">
                             <input oninput="this.value = Math.abs(this.value)" min="0" id="empweight" placeholder="Weight (lbs)" type="number" maxlength="3" oninput="this.value=this.value.slice(0,this.maxLength)">

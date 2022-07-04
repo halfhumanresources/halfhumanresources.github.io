@@ -115,7 +115,7 @@ function create_emp() {
 		&&
 		(age > 0)
 		&&
-		(height > 0)
+		(height.length > 0)
 		&&
 		(weight > 0)
 		&&
@@ -123,7 +123,7 @@ function create_emp() {
 		&&
 		(pulse > 0)
 		&&
-		(bp > 0)
+		(bp.length > 0)
 		&&
 		(resp > 0)
 		&&
@@ -174,11 +174,11 @@ function create_emp() {
 			$("input").val('');
 			document.getElementById("create-btn").innerHTML = '<i class="fa fa-user-plus"></i>Submit'
 		}
-		else{
-			document.getElementById("create-btn").innerHTML = '<i class="fa fa-user-plus"></i> Submit [Please complete and try again]';
+		else {
+			//document.getElementById("create-btn").innerHTML = '<i class="fa fa-user-plus"></i> Submit [Please complete and try again]';
+            $(".incomplete-alert").css("display", "flex");
 		}
-		;
-}
+};
 
 var emp_id;
 function delete_emp() {
