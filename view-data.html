@@ -72,7 +72,13 @@
                         <div class="input-group-1">
 						
 							<!-- Employee Name -->
-                            <input id="empname" placeholder="Full Name (First M. Last)" type="text" maxlength="50">
+                            <input 
+								id="empname" 
+								placeholder="Full Name (First M. Last)" 
+								type="text" 
+								maxlength="50"
+								oninput= "this.value = (this.value.match('^[a-zA-Z0-9\\s\\(\\[\\)\\]]*$') ? this.value : '')"
+							>
 							
 							<!-- Employee Age -->
                             <input oninput="this.value = Math.abs(this.value)" min="16" id="empage" placeholder="Age" type="number" maxlength="2" oninput="this.value=this.value.slice(0,this.maxLength)">
