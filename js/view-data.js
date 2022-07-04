@@ -64,6 +64,7 @@ function removeButtonsCreate() {
     $(".input-group-1").css("display", "flex");
     $(".input-group-2").css("display", "flex");
     $(".submit-buttons-wrap-create").css("display", "flex");
+	document.getElementById("create-btn").innerHTML = '<i class="fa fa-user-plus"></i>Submit';
 }
 function removeButtonsDelete() {
     $(".create-delete-wrap").css("display", "none");
@@ -81,6 +82,8 @@ function cancelForm() {
     $(".submit-buttons-wrap-create").css("display", "none");
     $(".submit-buttons-wrap-delete").css("display", "none");
     $(".input-group-delete").css("display", "none");
+	
+	document.getElementById("create-btn").innerHTML = '<i class="fa fa-user-plus"></i>Submit';
 }
 var fullname;
 var age;
@@ -173,6 +176,8 @@ function create_emp() {
 		else{
 			document.getElementById("create-btn").innerHTML = '<i class="fa fa-user-plus"></i> Submit [Please complete and try again]';
 		}
+		
+		document.getElementById("create-btn").innerHTML = '<i class="fa fa-user-plus"></i>Submit';
 }
 
 var emp_id;
