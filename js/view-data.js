@@ -172,12 +172,12 @@ function create_emp() {
 				})
 			})
 			$("input").val('');
+			document.getElementById("create-btn").innerHTML = '<i class="fa fa-user-plus"></i>Submit'
 		}
 		else{
 			document.getElementById("create-btn").innerHTML = '<i class="fa fa-user-plus"></i> Submit [Please complete and try again]';
 		}
-		
-		document.getElementById("create-btn").innerHTML = '<i class="fa fa-user-plus"></i>Submit';
+		;
 }
 
 var emp_id;
