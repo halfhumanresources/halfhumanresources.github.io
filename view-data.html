@@ -70,9 +70,33 @@
                 </div>
                     <div class="input-group-create">
                         <div class="input-group-1">
+						
+							<!-- Employee Name -->
                             <input id="empname" placeholder="Full Name (First M. Last)" type="text" maxlength="50">
+							
+							<!-- Employee Age -->
                             <input oninput="this.value = Math.abs(this.value)" min="16" id="empage" placeholder="Age" type="number" maxlength="2" oninput="this.value=this.value.slice(0,this.maxLength)">
-                            <input id="empgender" placeholder="Gender (M, F, T, or N)" type="text" maxlength="1">
+							
+							<!-- Employee Gender -->
+							<!-- Default input will be N until the user enters a different valid value -->
+							<!-- Incorrect inputs will straight up be prevented -->
+                            <!--<input 
+								oninput="this.value = this.value.length > 1 ? 
+														(this.value.toUpperCase().substring(1).match('[MFTN]') ? this.value.toUpperCase().substring(1) : 'N')
+														:
+														(this.value.toUpperCase().match('[MFTN]') ? this.value.toUpperCase() : 'N')" 
+								id="empgender" 
+								placeholder="Gender (M, F, T, or N)" 
+								type="text" 
+								maxlength="2"
+								title="Gender (M, F, T, or N)"
+							>-->
+							<select id="empgender" name="Gender">
+								<option value="M">Male</option>
+								<option value="F">Female</option>
+								<option value="T">Transgender</option>
+								<option value="N">Neutral</option>
+							</select>
                             <input id="empheight" placeholder="Height (ft'in)" type="text" maxlength="4">
                             <input oninput="this.value = Math.abs(this.value)" min="0" id="empweight" placeholder="Weight (lbs)" type="number" maxlength="3" oninput="this.value=this.value.slice(0,this.maxLength)">
                             <input min="95" id="empbodytemp" placeholder="Body Temp. (&deg;F)" type="number" maxlength="5" oninput="this.value=this.value.slice(0,this.maxLength)">
