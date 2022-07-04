@@ -135,7 +135,7 @@ function main(param) {
 
     var chartTitle = document.getElementById("eh-table-title");
 
-    if (pulseRadioBtn.checked) {
+    if (pulseRadioBtn.checked == true) {
         arr[0] = maleAveragePulse;
         arr[1] = femaleAveragePulse;
         arr[2] = nbAveragePulse;
@@ -143,7 +143,7 @@ function main(param) {
         arr[4] = allAveragePulse;
         chartTitle.innerHTML = "Average Employee Pulse Rate (BPM)";
     }
-    if (exerciseRadioBtn.checked) {
+    if (exerciseRadioBtn.checked == true) {
         arr[0] = maleAverageExercise;
         arr[1] = femaleAverageExercise;
         arr[2] = nbAverageExercise;
