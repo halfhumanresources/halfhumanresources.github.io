@@ -15,5 +15,5 @@ A lightweight, responsive UI that calls Vendia's API to allow for HR employees t
 - Joshua Degmetich **(Backend, Testing)** - jdegmetich@csus.edu
 - Kenneth Munk **(Logistics, Testing)** - kmunk@csus.edu | contact.me@kenmunk.com | [My Website](http://kenmunk.com)
 # Non-Contributors
-- Tim Huang **(Testing)** - timhuang@csus.edu
-- Sean Hackett **(Testing)** - shackett@csus.edu
+- Tim Huang - timhuang@csus.edu
+- Sean Hackett - shackett@csus.edu
